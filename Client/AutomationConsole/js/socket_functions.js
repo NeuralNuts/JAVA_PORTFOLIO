@@ -24,12 +24,32 @@
          socket.emit('message', message);
          sectionInput.value = '';
      });
+
      form.addEventListener('submit', (event) => {
         event.preventDefault();
         const barCodeInput = document.getElementById('bar-code-input');
         const message_2 = barCodeInput.value;
         socket.emit('message_2', message_2);
         barCodeInput.value = '';
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const xInput = document.getElementById('x-input');
+        const message_x = xInput.value;
+
+        socket.emit('message_x', message_x);
+        xInput.value = '';
+    });
+
+    form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const yInput = document.getElementById('y-input');
+        const message_y = yInput.value;
+        console.log(message_y)
+
+        socket.emit('message_y', message_y);
+        yInput.value = '';
     });
  })
  // Handle form submission to send messages

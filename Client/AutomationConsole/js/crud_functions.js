@@ -2,6 +2,8 @@ function highlight_row() {
 
     var section_input = $("#section-input");
     var bar_code_input = $("#bar-code-input");
+    var y_input = $("#y-input");
+    var x_input = $("#x-input");
 
     var table = document.getElementById('true-table');
     var cells = table.getElementsByTagName('td');
@@ -25,9 +27,8 @@ function highlight_row() {
 
             section_input.val(rowSelected.cells[2].innerHTML)
             bar_code_input.val(rowSelected.cells[5].innerHTML)
-            var x = rowSelected.cells[3].innerHTML
-            var y = rowSelected.cells[4].innerHTML
-            console.log(x, y)
+            x_input.val(rowSelected.cells[3].innerHTML)
+            y_input.val(rowSelected.cells[4].innerHTML)
         }
     }
 }

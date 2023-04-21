@@ -76,3 +76,14 @@ td:hover {
   display: none;
   /* background-color: #3a3a3a; */
 }
+
+.secret-input {
+  color: #111111;
+  background-color: #111111;
+  border: solid;
+}
+
+.secret-input:hover {
+  border-color: #111111;
+  cursor: default;
+}
