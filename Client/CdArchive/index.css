@@ -1,0 +1,264 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  background-color: #f0f0f0ec;
+}
+
+header {
+  background-color: blue;
+  position: relative;
+  display: grid;
+  text-align: left;
+  width: 100px;
+  height: 90vh;
+  margin-left: -620px;
+  margin-right: 0px;
+  padding-right: 0px;
+}
+
+h1 {
+  color: #131313da;
+}
+
+h2 {
+  color: #131313da;
+}
+
+p {
+  color: #ffffffda;
+}
+
+table {
+  color: #131313da;
+  width: 110vh;
+  margin-top: 50px;
+  padding-left: 10px;
+}
+
+.table-div {
+  margin-top: 0px;
+  width: 126vh;
+  position: absolute;
+  overflow: auto;
+  height: 200px;
+  max-height: 200px;
+}
+
+th {
+  font-size: 20px;
+  border: solid;
+  border-width: 2px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-color: #e11e69d9;
+}
+
+td {
+  
+  border-radius: 3px;
+  font-size: 15px;
+  border: solid;
+  border-width: 2px;
+  border-color: #c6c6c6ce;
+}
+
+td:hover {
+  background-color: #c6c6c66d;
+  cursor: pointer;
+}
+
+.god-div {
+  margin-left: -65vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffffda;
+  border: solid;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #1d1d1d2f;
+}
+
+.god-div-2 {
+  margin-top: -92.2vh;
+  margin-left: 64vh;
+  width: 60vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffffda;
+  border: solid;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #1d1d1d2f;
+}
+
+.file-input {
+  width: 410px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border: solid;
+  border-width: 2px;
+  background-color: white;
+  color: #131313da;
+  font-size: 17px;
+  border-color: #ac154fec;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 25px;
+}
+
+textarea {
+  width: 99%;
+  height: 100px;
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  resize: none;
+  border: solid;
+  border-width: 1px;
+}
+
+textarea:hover {
+  border-color: #e11e69d9;
+}
+
+.god-div-3 {
+  margin-top: -16vh;
+  margin-left: 64vh;
+  width: 60vh;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #ffffffda;
+  border: solid;
+  border-width: 2px;
+  border-color: transparent;
+  border-radius: 5px;
+  box-shadow: 10px 10px 10px #1d1d1d2f;
+}
+
+.search-div {
+  display: flex;
+  background-color: #d8d8d8da;
+  border: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #c7c7c7da;
+  margin-bottom: 5px;
+}
+
+.change-div {
+  display: block;
+  background-color: #d8d8d8da;
+  border: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #c7c7c7da;
+}
+
+.tree-div {
+  display: flex;
+  background-color: #d8d8d8da;
+  border: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #c7c7c7da;
+  margin-top: 50px;
+  margin-bottom: 5px;
+}
+
+.tree-div button {
+  width: 130px;
+  margin-top: 23px;
+  height: 26px;
+  border: solid;
+  border-width: 2px;
+  background-color: #e11e69d9;
+  color: white;
+  font-size: 17px;
+  border-color: #ac154fec;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.tree-div button:hover {
+  transition: 0.5s;
+  background-color: #ff0062d9;
+  border-color: #ff8a8aec;
+}
+
+.process-div {
+  display: flex;
+  background-color: #d8d8d8da;
+  border: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #c7c7c7da;
+  margin-top: 220px;
+  margin-bottom: 10px;
+}
+
+.process-div button {
+  width: 130px;
+  margin-top: 24px;
+  height: 26px;
+  border: solid;
+  border-width: 2px;
+  background-color: #e11e69d9;
+  color: white;
+  font-size: 17px;
+  border-color: #ac154fec;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.process-div button:hover {
+  transition: 0.5s;
+  background-color: #ff0062d9;
+  border-color: #ff8a8aec;
+}
+
+.search-div h2 {
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-left: 10px;
+}
+
+input {
+  width: 130px;
+  margin-top: 28px;
+  height: 20px;
+  margin-right: 10px;
+  border: solid;
+  border-width: 1px;
+}
+
+input:hover {
+  border-color: #e11e69d9;
+}
+
+.search-div button {
+  width: 130px;
+  margin-top: 27px;
+  height: 26px;
+  border: solid;
+  border-width: 2px;
+  background-color: #e11e69d9;
+  color: white;
+  font-size: 17px;
+  border-color: #ac154fec;
+  border-radius: 10px;
+  cursor: pointer;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.search-div button:hover {
+  transition: 0.5s;
+  background-color: #ff0062d9;
+  border-color: #ff8a8aec;
+}

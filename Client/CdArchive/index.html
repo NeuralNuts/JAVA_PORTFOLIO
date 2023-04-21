@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>CD Archives</title>
+  <link rel="stylesheet" href="index.css">
+  </link>
+  <script src="node_modules/socket.io/client-dist/socket.io.js"></script>
+  <script src="./js/socket_functions.js"></script>
+  <script src="./js/crud_functions.js"></script>
+  <script src="./js/sorting_algorithms.js"></script>
+  <script src="./js/binary_tree.js"></script>
+  <script>window.$ = window.jQuery = require('jquery');</script>
+</head>
+
+<body>
+  <div class="god-div">
+    <div id="chat-log"></div>
+    <form id="message-form">
+      <input id="message-input" type="text" placeholder="Type a message...">
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="search-div">
+      <h2>Search String:</h2>
+      <input id="search-input" />
+      <button onclick="searchTable()">Search</button>
+
+      <h2>Sort:</h2>
+      <button>By Title</button>
+      <button>By Author</button>
+      <button>By Barcode</button>
+    </div>
+
+    <div class="table-div" id="true-table">
+      <table id="table-id">
+        <thread>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Author</th>
+          <th>Section</th>
+          <th>X</th>
+          <th>Y</th>
+          <th>Barcode</th>
+          <th>Description</th>
+          <th>On-Loan</th>
+        </thread>
+
+        <tbody id="my-table">
+
+        </tbody>
+      </table>
+    </div>
+
+    <div class="process-div">
+      <h2>Process Log:</h2>
+      <button>Process Log</button>
+    </div>
+
+    <div>
+      <textarea id="textarea-input"></textarea>
+    </div>
+
+    <div class="tree-div">
+      <h2>Display Binary Tree:</h2>
+      <button onclick="preorderTraverseTree()">Pre-Order</button>
+      <button onclick="inorderTraversal()">In-Order</button>
+      <button onclick="postorderTraversal()">Post-Order</button>
+      <button>Graphical</button>
+    </div>
+
+    <div class="search-div">
+      <h2>HashMap / Set:</h2>
+      <button>Save</button>
+      <button>Display</button>
+    </div>
+  </div>
+
+  <div class="god-div-3">
+    <div class="search-div">
+      <h2>Automation Request:</h2>
+    </div>
+
+    <div class="search-div">
+      <button>Retrieve</button>
+      <button>Remove</button>
+      <button>Return</button>
+      <button>Add</button>
+    </div>
+
+    <div class="search-div">
+      <h2>Sort Section:</h2>
+      <input />
+    </div>
+
+    <div class="search-div">
+      <button onclick="bubbleSort()">Bubble Sort</button>
+      <button onclick="selectionSort()">Selection Sort</button>
+      <button onclick="insertionSort()">Insertion Sort</button>
+    </div>
+
+  </div>
+  </div>
+
+  <div class="god-div-2">
+    <div class="search-div">
+      <h2>Id:</h2>
+      <input id="id-input">
+
+      <h2>Title:</h2>
+      <input id="title-input">
+    </div>
+
+    <div class="search-div">
+      <h2>Section:</h2>
+      <input id="section-input">
+
+      <h2>Author:</h2>
+      <input id="author-input">
+    </div>
+
+    <div class="search-div">
+      <h2>X:</h2>
+      <input id="x-input">
+
+      <h2>Y:</h2>
+      <input id="y-input">
+    </div>
+
+    <div class="search-div">
+      <h2>BarCode:</h2>
+      <input id="bar-code-input" />
+
+      <h2>OnLoan:</h2>
+      <input id="on-loan-input" />
+    </div>
+
+    <div class="search-div">
+      <h2>Description:</h2>
+      <textarea id="description-input"></textarea>
+    </div>
+
+    <div class="search-div">
+      <button onclick="addItemToTable()">Add</button>
+      <button onclick="updateItemInTable()">Update</button>
+      <button onclick="deleteItemInTable()">Delete</button>
+    </div>
+  </div>
+</body>
+
+<script>
+
+  loadDataTree();
+  loadData();
+
+
+</script>
+
+</html>
