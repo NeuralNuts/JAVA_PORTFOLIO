@@ -3,5 +3,86 @@ body {
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
-  background-color: #f0f0f0ec;
+  background: linear-gradient(#222222, #111111);
+}
+
+.god-div {
+  color: whitesmoke;
+  background-color: #222222;
+  border: solid;
+  border-width: 2px;
+  border-color: #3a3a3a;
+  padding-left: 10px;
+  margin-left: -65vh;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+  display:inline-table;
+}
+
+.god-div-2 {
+  color: whitesmoke;
+  background-color: #222222;
+  border: solid;
+  border-width: 2px;
+  border-color: #3a3a3a;
+  padding-left: 10px;
+  margin-left: 17vh;
+  width: 26%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  display: inline-block;
+}
+
+.god-div-3 {
+  color: whitesmoke;
+  background-color: #222222;
+  border: solid;
+  border-width: 2px;
+  border-color: #3a3a3a;
+  padding-left: 10px;
+  margin-left: 86vh;
+  width: 20%;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  position: absolute;
+  display: inline-table;
+}
+
+.parent-div {
+  /* display: inline-table; */
+  background-color: #111111;
+  padding-left: 10px;
+  padding-bottom: 43px;
+}
+
+.parent-div-2 {
+  /* display: inline-block; */
+  background-color: #111111;
+  padding-left: 10px;
+  padding-bottom: 10px;
+}
+
+.middle-child-div {
+  display: inline-block;
+  padding-bottom: 0px;
+}
+
+.child-div-2 {
+  display: inline-block;
+  padding-bottom: 0px;
+}
+
+.tbody-div {
+  display: block;
+  padding-bottom: 0px;
+  overflow: auto;
+  position:relative;
+  width: 60vh;
+  height: 60vh;
+  max-height: 80vh;
 }

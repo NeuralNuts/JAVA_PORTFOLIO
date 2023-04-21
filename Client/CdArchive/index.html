@@ -22,139 +22,129 @@
       <button type="submit">Send</button>
     </form>
 
-    <div class="parent-div">
-      <h2>Search String:</h2>
-      <input id="search-input" />
-      <button onclick="searchTable()">Search</button>
-
-      <h2>Sort:</h2>
-      <button>By Title</button>
-      <button>By Author</button>
-      <button>By Barcode</button>
-    </div>
-
     <div class="parent-div" id="true-table">
-      <table id="table-id">
-        <thread>
-          <th>Id</th>
-          <th>Title</th>
-          <th>Author</th>
-          <th>Section</th>
-          <th>X</th>
-          <th>Y</th>
-          <th>Barcode</th>
-          <th>Description</th>
-          <th>On-Loan</th>
-        </thread>
+      <div class="child-div-2">
+        <h2>Search String:</h2>
+        <input id="search-input" />
+        <button onclick="searchTable()">Search</button>
 
-        <tbody id="my-table">
+        <h2>Sort:</h2>
+        <button>By Title</button>
+        <button>By Author</button>
+        <button>By Barcode</button>
+      </div>
 
-        </tbody>
-      </table>
-    </div>
-
-    <div class="parent-div">
-      <h2>Process Log:</h2>
-      <button>Process Log</button>
-    </div>
-
-    <div>
-      <textarea id="textarea-input"></textarea>
-    </div>
-
-    <div class="parent-div">
-      <h2>Display Binary Tree:</h2>
-      <button onclick="preorderTraverseTree()">Pre-Order</button>
-      <button onclick="inorderTraversal()">In-Order</button>
-      <button onclick="postorderTraversal()">Post-Order</button>
-      <button>Graphical</button>
-    </div>
-
-    <div class="parent-div">
-      <h2>HashMap / Set:</h2>
-      <button>Save</button>
-      <button>Display</button>
+      <div class="child-div">
+        <div class="tbody-div">
+          <table id="table-id">
+            <thread>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Section</th>
+              <th>X</th>
+              <th>Y</th>
+              <th>Barcode</th>
+              <th>Description</th>
+              <th>On-Loan</th>
+            </thread>
+  
+            <tbody id="my-table">
+  
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 
-  <div class="god-div">
-    <div class="parent-div">
-      <h2>Automation Request:</h2>
-    </div>
-
-    <div class="parent-div">
-      <button>Retrieve</button>
-      <button>Remove</button>
-      <button>Return</button>
-      <button>Add</button>
-    </div>
-
-    <div class="parent-div">
+  <div class="god-div-2">
+    <div class="parent-div-2">
       <h2>Sort Section:</h2>
       <input />
-    </div>
 
-    <div class="parent-div">
       <button onclick="bubbleSort()">Bubble Sort</button>
       <button onclick="selectionSort()">Selection Sort</button>
       <button onclick="insertionSort()">Insertion Sort</button>
     </div>
 
-  </div>
-  </div>
+    <div class="parent-div-2">
+      <div class="middle-child-div">
+        <div class="child-div-2">
+          <h2>Process Log:</h2>
+          <button>Process Log</button>
+          <textarea id="textarea-input"></textarea>
+        </div>
 
-  <div class="god-div-2">
-    <div class="search-div">
-      <h2>Id:</h2>
-      <input id="id-input">
+        <div class="child-div-2">
+          <h2>Display Binary Tree:</h2>
+          <button onclick="preorderTraverseTree()">Pre-Order</button>
+          <button onclick="inorderTraversal()">In-Order</button>
+          <button onclick="postorderTraversal()">Post-Order</button>
+          <button>Graphical</button>
+        </div>
 
-      <h2>Title:</h2>
-      <input id="title-input">
-    </div>
+        <div class="child-div-2">
+          <h2>HashMap / Set:</h2>
+          <button>Save</button>
+          <button>Display</button>
 
-    <div class="search-div">
-      <h2>Section:</h2>
-      <input id="section-input">
+          <h2>Automation Request:</h2>
 
-      <h2>Author:</h2>
-      <input id="author-input">
-    </div>
-
-    <div class="search-div">
-      <h2>X:</h2>
-      <input id="x-input">
-
-      <h2>Y:</h2>
-      <input id="y-input">
-    </div>
-
-    <div class="search-div">
-      <h2>BarCode:</h2>
-      <input id="bar-code-input" />
-
-      <h2>OnLoan:</h2>
-      <input id="on-loan-input" />
-    </div>
-
-    <div class="search-div">
-      <h2>Description:</h2>
-      <textarea id="description-input"></textarea>
-    </div>
-
-    <div class="search-div">
-      <button onclick="addItemToTable()">Add</button>
-      <button onclick="updateItemInTable()">Update</button>
-      <button onclick="deleteItemInTable()">Delete</button>
+          <button>Retrieve</button>
+          <button>Remove</button>
+          <button>Return</button>
+          <button>Add</button>
+        </div>
+      </div>
     </div>
   </div>
+
+  <div class="god-div-3">
+    <div class="parent-div-2">
+      <div class="middle-child-div">
+        <div class="child-div-2">
+          <h2>Id:</h2>
+          <input id="id-input">
+
+          <h2>Title:</h2>
+          <input id="title-input">
+
+          <h2>Section:</h2>
+          <input id="section-input">
+
+          <h2>Author:</h2>
+          <input id="author-input">
+
+          <h2>X:</h2>
+          <input id="x-input">
+
+          <h2>Y:</h2>
+          <input id="y-input">
+
+          <h2>BarCode:</h2>
+          <input id="bar-code-input" />
+
+          <h2>OnLoan:</h2>
+          <input id="on-loan-input" />
+
+          <h2>Description:</h2>
+          <textarea id="description-input"></textarea>
+          <br />
+
+          <button onclick="addItemToTable()">Add</button>
+          <button onclick="updateItemInTable()">Update</button>
+          <button onclick="deleteItemInTable()">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      
 </body>
 
 <script>
-
   loadDataTree();
   loadData();
-
-
 </script>
 
 </html>

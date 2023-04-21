@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "my-app",
-=======
-  "name": "my-app-2",
->>>>>>> 2a6f962 (first commit)
   "productName": "my-app",
   "version": "1.0.0",
   "description": "My Electron application description",
