@@ -3,34 +3,37 @@ const socket = io("http://localhost:3000");
 console.log(socket)
 
 // Listen for incoming messages from the server
-socket.on('message', (data) => {
-    // Add the message to the chat log
-    // const chatLog = document.getElementById('log-div');
-    // const newMessage = document.createElement('input');
-    // newMessage.value = data;
 
-    // chatLog.appendChild(newMessage);
+
+socket.on('message', (data) => {
+    //Add the message to the chat log
+    const chatLog = document.getElementById('log-div');
+    const newMessage = document.createElement('input');
+    newMessage.value = data;
+
+    chatLog.appendChild(newMessage);
+
     const sectionInput = document.getElementById("section-input")
     sectionInput.value = data
 });
 
 socket.on('message_2', (data) => {
-    // Add the message to the chat log
-    // const chatLog = document.getElementById('log-div');
-    // const newMessage = document.createElement('input');
-    // newMessage.value = data;
+    //Add the message to the chat log
+    const chatLog = document.getElementById('log-div');
+    const newMessage = document.createElement('input');
+    newMessage.value = data;
 
-    // chatLog.appendChild(newMessage);
+    chatLog.appendChild(newMessage);
 
     const barCodeInput = document.getElementById("bar-code-input")
     barCodeInput.value = data
 });
 
 socket.on('message_x', (data) => {
-    // Add the message to the chat log
-    // const chatLog = document.getElementById('log-div');
-    // const newMessage = document.createElement('input');
-    // newMessage.value = data;
+    //Add the message to the chat log
+    const chatLog = document.getElementById('log-div');
+    const newMessage = document.createElement('input');
+    newMessage.value = data;
 
     // chatLog.appendChild(newMessage);
 
