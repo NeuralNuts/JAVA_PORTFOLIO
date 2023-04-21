@@ -44,6 +44,7 @@ body {
   border-color: #3a3a3a;
   padding-left: 10px;
   margin-left: 55vh;
+  margin-top: -86.2vh;
   width: 20%;
   padding-left: 10px;
   padding-right: 10px;
@@ -83,6 +84,16 @@ body {
   width: 85vh;
   height: 60vh;
   max-height: 80vh;
+}
+
+.log-div {
+  display: block;
+  padding-bottom: 0px;
+  overflow: auto;
+  position:relative;
+  width: 20vh;
+  height: 40vh;
+  max-height: 36vh;
 }
 
 ::-webkit-scrollbar {
