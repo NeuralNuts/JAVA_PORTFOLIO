@@ -22,6 +22,12 @@ sockio.on('connection', (socket) => {
         // Broadcast the message to all connected clients
         sockio.emit('message', data);
     });
+    socket.on('message_2', (data) => {
+        console.log(`Received message: ${data}`);
+
+        // Broadcast the message to all connected clients
+        sockio.emit('message_2', data);
+    });
 });
 
 // Start the server

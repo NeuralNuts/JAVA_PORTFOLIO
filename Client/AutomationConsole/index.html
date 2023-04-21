@@ -7,15 +7,13 @@
   <link rel="stylesheet" href="index.css" />
   <script src="node_modules/socket.io/client-dist/socket.io.js"></script>
   <script src="./js/socket_functions.js"></script>
+  <script src="./js/crud_functions.js"></script>
+  <script>window.$ = window.jQuery = require('jquery');</script>
 </head>
 
 <body>
   <div class="god-div">
     <div id="chat-log"></div>
-    <form id="message-form">
-      <input id="message-input" type="text" placeholder="Type a message...">
-      <button type="submit">Send</button>
-    </form>
 
     <div class="parent-div" id="true-table">
       <div class="child-div-2">
@@ -27,20 +25,21 @@
           <option>Sort</option>
           <option>Return</option>
         </select>
-        <button>Process</button>
+        <button >Process</button>
 
         <h2>Bar Code of Selected Item:</h2>
-        <input />
+        <input id="bar-code-input"/>
         <h2>Sedction:</h2>
-        <input />
-        <button>Add Item</button>
+        <input id="section-input"/>
+        <form id="message-form">
+          <button type="submit">Add Item</button>
+        </form>
       <div>
 
       <div class="child-div">
         <div class="tbody-div">
           <table id="table-id">
             <thread>
-              <th>Id</th>
               <th>Title</th>
               <th>Author</th>
               <th>Section</th>
@@ -51,14 +50,13 @@
             </thread>
   
             <tbody id="my-table">
-              <td>effessf</td>
-              <td>effessf</td>
-              <td>effessf</td>
-              <td>effessf</td>
-              <td>effessf</td>
-              <td>effessf</td>
-              <td>effessf</td>
-              <td>effessf</td>
+              <td>B</td>
+              <td>A</td>
+              <td>Q</td>
+              <td>P</td>
+              <td>U</td>
+              <td>Y</td>
+              <td>T</td>
             </tbody>
           </table>
         </div>
@@ -68,7 +66,6 @@
 </body>
 
 <script>
-
-  
+  highlight_row();
 </script>
 </html>
