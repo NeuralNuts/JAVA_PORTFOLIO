@@ -5,10 +5,9 @@
  // Listen for incoming messages from the server
  socket.on('message', (data) => {
      // Add the message to the chat log
-     const chatLog = document.getElementById('chat-log');
-     const newMessage = document.getElementById('textarea-input');
-     newMessage.textContent = data;
-     //chatLog.appendChild(newMessage);
+     const chatLog = document.getElementById('log-div');
+     const newMessage = document.createElement('input');
+     newMessage.value = data;
  });
 
  window.addEventListener('load', () => {
