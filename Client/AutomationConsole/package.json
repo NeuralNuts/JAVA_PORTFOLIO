@@ -1,14 +1,10 @@
 {
-<<<<<<< HEAD
-  "name": "my-app",
-=======
-  "name": "my-app-2",
->>>>>>> 2a6f962 (first commit)
-  "productName": "my-app",
+  "name": "automation_console",
+  "productName": "automation_console",
   "version": "1.0.0",
   "description": "My Electron application description",
-  "main": "./main.cjs",
-  "type": "module",
+  "main": "src/index.js",
+  "homepage": "./",
   "scripts": {
     "start": "electron-forge start",
     "package": "electron-forge package",
@@ -22,28 +18,17 @@
     "email": "wilsonzakk8@gmail.com"
   },
   "license": "MIT",
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.18.2",
+    "socket.io": "^4.6.1"
+  },
   "devDependencies": {
     "@electron-forge/cli": "^6.1.1",
     "@electron-forge/maker-deb": "^6.1.1",
     "@electron-forge/maker-rpm": "^6.1.1",
     "@electron-forge/maker-squirrel": "^6.1.1",
     "@electron-forge/maker-zip": "^6.1.1",
-    "@vercel/webpack-asset-relocator-loader": "^1.7.3",
-    "css-loader": "^6.7.3",
-    "electron": "24.1.1",
-    "node-loader": "^2.0.0",
-    "style-loader": "^3.3.2"
-  },
-  "dependencies": {
-    "csv": "^6.2.8",
-    "csv-parse": "^5.3.6",
-    "electron-squirrel-startup": "^1.0.0",
-    "express": "^4.18.2",
-    "jquery": "^3.6.4",
-    "jsdom": "^21.1.1",
-    "requirejs": "^2.3.6",
-    "socket.io": "^4.6.1",
-    "socket.io-client": "^4.6.1",
-    "sqlite3": "^5.1.6"
+    "electron": "24.1.2"
   }
 }
