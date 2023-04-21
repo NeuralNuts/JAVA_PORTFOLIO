@@ -18,7 +18,7 @@ function highlight_row() {
             for (var row = 0; row < rowsNotSelected.length; row++) {
 
                 rowsNotSelected[row].style.backgroundColor = "";
-                rowsNotSelected[row].classList.remove('selected');
+                rowsNotSelected[row].classList.backgroundColor = "";
             }
 
             var rowSelected = table.getElementsByTagName('tr')[rowId];
@@ -29,5 +29,19 @@ function highlight_row() {
             var y = rowSelected.cells[4].innerHTML
             console.log(x, y)
         }
+    }
+}
+
+function DisplayAddItemButton() {
+
+    var processSelect = document.getElementById("select-process")
+
+    if (processSelect.options[processSelect.selectedIndex].text === "Add") {
+
+        console.log("Yes")
+        $("#add-item").show();
+    }
+    else {
+        $("#add-item").hide();
     }
 }

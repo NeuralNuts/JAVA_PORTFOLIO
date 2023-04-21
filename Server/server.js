@@ -13,7 +13,7 @@ const sockio = new Server(httpServer, {
 
 // Initialize socket.io and listen for incoming connections
 sockio.on('connection', (socket) => {
-    console.log('A user connected');
+    console.log('A robot connected');
 
     // Listen for incoming messages from clients
     socket.on('message', (data) => {

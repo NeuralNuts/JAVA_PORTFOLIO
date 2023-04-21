@@ -71,3 +71,8 @@ td:hover {
   background-color: #222222;
   cursor: pointer;
 }
+
+.add-item-button {
+  display: none;
+  /* background-color: #3a3a3a; */
+}

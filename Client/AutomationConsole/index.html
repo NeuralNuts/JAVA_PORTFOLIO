@@ -18,21 +18,21 @@
     <div class="parent-div" id="true-table">
       <div class="child-div-2">
         <h2>Search String:</h2>
-        <select>
+        <select id="select-process">
           <option>Add</option>
           <option>Remove</option>
           <option>Retrieve</option>
           <option>Sort</option>
           <option>Return</option>
         </select>
-        <button >Process</button>
+        <button onclick="DisplayAddItemButton()">Process</button>
 
         <h2>Bar Code of Selected Item:</h2>
         <input id="bar-code-input"/>
         <h2>Sedction:</h2>
         <input id="section-input"/>
         <form id="message-form">
-          <button type="submit">Add Item</button>
+          <button type="submit" id="add-item" class="add-item-button">Add Item</button>
         </form>
       <div>
 
@@ -58,6 +58,16 @@
               <td>Y</td>
               <td>T</td>
             </tbody>
+
+            <tbody id="my-table">
+              <td>ss</td>
+              <td>ff</td>
+              <td>hh</td>
+              <td>aa</td>
+              <td>qq</td>
+              <td>ii</td>
+              <td>pp</td>
+            </tbody>
           </table>
         </div>
       </div>
@@ -67,5 +77,6 @@
 
 <script>
   highlight_row();
+  
 </script>
 </html>
