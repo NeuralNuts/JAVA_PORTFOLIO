@@ -2,8 +2,9 @@
   "name": "automation_console",
   "productName": "automation_console",
   "version": "1.0.0",
+  "type": "module",
   "description": "My Electron application description",
-  "main": "src/index.js",
+  "main": "./index.cjs",
   "homepage": "./",
   "scripts": {
     "start": "electron-forge start",

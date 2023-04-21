@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <link rel="stylesheet" href="index.css" />
+  <script src="node_modules/socket.io/client-dist/socket.io.js"></script>
+  <script src="./js/socket_functions.js"></script>
+</head>
+
+<body>
+  <div class="god-div">
+    <div id="chat-log"></div>
+    <form id="message-form">
+      <input id="message-input" type="text" placeholder="Type a message...">
+      <button type="submit">Send</button>
+    </form>
+
+    <div class="parent-div" id="true-table">
+      <div class="child-div-2">
+        <h2>Search String:</h2>
+        <input id="search-input" />
+        <button onclick="searchTable()">Search</button>
+
+        <h2>Sort:</h2>
+        <button>By Title</button>
+        <button>By Author</button>
+        <button>By Barcode</button>
+      </div>
+
+      <div class="child-div">
+        <div class="tbody-div">
+          <table id="table-id">
+            <thread>
+              <th>Id</th>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Section</th>
+              <th>X</th>
+              <th>Y</th>
+              <th>Barcode</th>
+              <th>Description</th>
+              <th>On-Loan</th>
+            </thread>
+  
+            <tbody id="my-table">
+              <td>effessf</td>
+              <td>effessf</td>
+              <td>effessf</td>
+              <td>effessf</td>
+              <td>effessf</td>
+              <td>effessf</td>
+              <td>effessf</td>
+              <td>effessf</td>
+              <td>effessf</td>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+<script>
+
+  
+</script>
+</html>
