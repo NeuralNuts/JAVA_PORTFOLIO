@@ -14,10 +14,10 @@ body {
   border-width: 2px;
   border-color: #3a3a3a;
   padding-left: 10px;
-  margin-left: -65vh;
+  margin-left: -55vh;
   padding-left: 10px;
   padding-right: 10px;
-  width: 115%;
+  width: 100%;
   display:inline-table;
 }
 
@@ -29,7 +29,7 @@ body {
   border-color: #3a3a3a;
   padding-left: 10px;
   margin-left: 1vh;
-  width: 26%;
+  width: 24%;
   padding-left: 10px;
   padding-right: 10px;
   position: absolute;
@@ -43,8 +43,8 @@ body {
   border-width: 2px;
   border-color: #3a3a3a;
   padding-left: 10px;
-  margin-left: 55vh;
-  margin-top: -86.2vh;
+  margin-left: 50vh;
+  margin-top: -91vh;
   width: 20%;
   padding-left: 10px;
   padding-right: 10px;
@@ -81,7 +81,7 @@ body {
   padding-bottom: 0px;
   overflow: auto;
   position:relative;
-  width: 85vh;
+  width: 105vh;
   height: 60vh;
   max-height: 80vh;
 }
@@ -137,4 +137,14 @@ textarea {
   resize: none;
   width: 35vh;
   height: 8vh;
+}
+
+input {
+  height: 20px;
+  width: 150px;
+}
+
+h2 {
+  font-size: 15px;
+  margin-bottom: -4px;
 }

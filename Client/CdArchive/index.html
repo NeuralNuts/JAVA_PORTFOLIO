@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <title>CD Archives</title>
-  <link rel="stylesheet" href="index.css"></link>
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <script src="node_modules/socket.io/client-dist/socket.io.js"></script>
   <script src="./js/socket_functions.js"></script>
   <script src="./js/crud_functions.js"></script>
@@ -14,126 +14,108 @@
 </head>
 
 <body>
-  <div class="god-div">
-    <div class="parent-div" id="true-table">
-      <div class="child-div-2">
-        <h2>Search String:</h2>
-        <input id="search-input" />
-        <button onclick="searchTable()">Search</button>
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">Button</button>
+    </div>
+  </div>
+  <div class="container">
+    
 
-        <h2>Sort:</h2>
-        <button>By Title</button>
-        <button>By Author</button>
-        <button>By Barcode</button>
-      </div>
+    <button class="btn btn-success">By Title</button>
+    <button class="btn btn-success">By Author</button>
+    <button class="btn btn-success btn-blue">By Barcode</button>
 
-      <div class="child-div">
-        <div class="tbody-div">
-          <table id="table-id">
-            <thread>
-              <th>Id</th>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Section</th>
-              <th>X</th>
-              <th>Y</th>
-              <th>Barcode</th>
-              <th>Description</th>
-              <th>On-Loan</th>
-            </thread>
-  
-            <tbody id="my-table">
-  
-            </tbody>
-          </table>
-        </div>
-      </div>
+    <div id="true-table">
+      <table class="table table-hover table-striped id="table-id">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Author</th>
+            <th scope="col">Section</th>
+            <th scope="col">X</th>
+            <th scope="col">Y</th>
+            <th scope="col">Barcode</th>
+            <th scope="col">Description</th>
+            <th scope="col">On-Loan</th>
+          </tr>
+        </thead>
+
+        <tbody id="my-table">
+
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <div class="god-div-2">
-    <div class="parent-div-2">
-      <h2>Sort Section:</h2>
-      <input />
+  <div class="container">
+    <h2>Sort Section:</h2>
+    <input />
 
-      <button onclick="bubbleSort()">Bubble Sort</button>
-      <button onclick="selectionSort()">Selection Sort</button>
-      <button onclick="insertionSort()">Insertion Sort</button>
+    <button onclick="bubbleSort()">Bubble Sort</button>
+    <button onclick="selectionSort()">Selection Sort</button>
+    <button onclick="insertionSort()">Insertion Sort</button>
+
+    <h2>Process Log:</h2>
+    <button>Process Log</button>
+    <div class="container" id="log-div">
+
     </div>
 
-    <div class="parent-div-2">
-      <div class="middle-child-div">
-        <div class="child-div-2">
-          <h2>Process Log:</h2>
-          <button>Process Log</button>
-          <div class="log-div" id="log-div">
+    <h2>Display Binary Tree:</h2>
+    <button onclick="preorderTraverseTree()">Pre-Order</button>
+    <button onclick="inorderTraversal()">In-Order</button>
+    <button onclick="postorderTraversal()">Post-Order</button>
+    <button>Graphical</button>
 
-          </div>
+    <h2>HashMap / Set:</h2>
+    <button>Save</button>
+    <button>Display</button>
 
-        <div class="child-div-2">
-          <h2>Display Binary Tree:</h2>
-          <button onclick="preorderTraverseTree()">Pre-Order</button>
-          <button onclick="inorderTraversal()">In-Order</button>
-          <button onclick="postorderTraversal()">Post-Order</button>
-          <button>Graphical</button>
-        </div>
+    <h2>Automation Request:</h2>
 
-        <div class="child-div-2">
-          <h2>HashMap / Set:</h2>
-          <button>Save</button>
-          <button>Display</button>
-
-          <h2>Automation Request:</h2>
-
-          <button>Retrieve</button>
-          <button>Remove</button>
-          <button>Return</button>
-          <button>Add</button>
-        </div>
-      </div>
-    </div>
+    <button>Retrieve</button>
+    <button>Remove</button>
+    <button>Return</button>
+    <button>Add</button>
   </div>
 
-  <div class="god-div-3">
-    <div class="parent-div-2">
-      <div class="middle-child-div">
-        <div class="child-div-2">
-          <h2>Id:</h2>
-          <input id="id-input">
+  <div class="container">
+    <h2>Id:</h2>
+    <input id="id-input">
 
-          <h2>Title:</h2>
-          <input id="title-input">
+    <h2>Title:</h2>
+    <input id="title-input">
 
-          <h2>Section:</h2>
-          <input id="section-input">
+    <h2>Section:</h2>
+    <input id="section-input">
 
-          <h2>Author:</h2>
-          <input id="author-input">
+    <h2>Author:</h2>
+    <input id="author-input">
 
-          <h2>X:</h2>
-          <input id="x-input">
+    <h2>X:</h2>
+    <input id="x-input">
 
-          <h2>Y:</h2>
-          <input id="y-input">
+    <h2>Y:</h2>
+    <input id="y-input">
 
-          <h2>BarCode:</h2>
-          <input id="bar-code-input" />
+    <h2>BarCode:</h2>
+    <input id="bar-code-input" />
 
-          <h2>OnLoan:</h2>
-          <input id="on-loan-input" />
+    <h2>OnLoan:</h2>
+    <input id="on-loan-input" />
 
-          <h2>Description:</h2>
-          <textarea id="description-input"></textarea>
-          <br />
+    <h2>Description:</h2>
+    <textarea id="description-input"></textarea>
+    <br />
 
-          <button onclick="addItemToTable()">Add</button>
-          <button onclick="updateItemInTable()">Update</button>
-          <button onclick="deleteItemInTable()">Delete</button>
-        </div>
-      </div>
-    </div>
+    <button onclick="addItemToTable()">Add</button>
+    <button onclick="updateItemInTable()">Update</button>
+    <button onclick="deleteItemInTable()">Delete</button>
   </div>
-      
+
 </body>
 
 <script>
