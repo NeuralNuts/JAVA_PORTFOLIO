@@ -63,29 +63,50 @@
     </div>
 
     <div class="container">
-      <h2 class="h2">Process Log:</h2>
-        <button class="btn btn-success">Process Log</button>
-        <div class = "mh-100 info" style = "width: 230px; height: 200px; overflow: auto;" id="log-div">
+      <div class="form-group shadow-textarea">
+        <label for="exampleFormControlTextarea6">Process log:</label>
+        <textarea class="form-control z-depth-1" id="exampleFormControlTextarea6" rows="3"
+          placeholder="Waiting..."></textarea>
+        <button class="btn btn-success mt-2">Process Log</button>
+        <label for="exampleFormControlTextarea6">Binary tree:</label>
+        <button onclick="preorderTraverseTree()" class="btn btn-success mt-2">Pre-Order</button>
+        <button onclick="inorderTraversal()" class="btn btn-success mt-2">In-Order</button>
+        <button onclick="postorderTraversal()" class="btn btn-success mt-2">Post-Order</button>
+        <button class="btn btn-success mt-2">Graphical</button>
+        <label for="exampleFormControlTextarea6">Hash map:</label>
+        <button class="btn btn-success mt-2">Save</button>
+        <button class="btn btn-success mt-2">Display</button>
+        <label for="exampleFormControlTextarea6">Automation req:</label>
+        <button class="btn btn-success mt-2">Retrieve</button>
+        <button class="btn btn-success mt-2">Remove</button>
+        <button class="btn btn-success mt-2">Return</button>
+        <button class="btn btn-success mt-2">Add</button>
 
-        </div>
+      </div>
 
-        <h2>Display Binary Tree:</h2>
-        <button onclick="preorderTraverseTree()">Pre-Order</button>
-        <button onclick="inorderTraversal()">In-Order</button>
-        <button onclick="postorderTraversal()">Post-Order</button>
-        <button>Graphical</button>
+      <div class="mh-100 info" style="width: 230px; height: 200px; overflow: auto;" id="log-div">
 
-        <h2>HashMap / Set:</h2>
-        <button>Save</button>
-        <button>Display</button>
-
-        <h2>Automation Request:</h2>
-
-        <button>Retrieve</button>
-        <button>Remove</button>
-        <button>Return</button>
-        <button>Add</button>
+      </div>
     </div>
+
+    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">open</a>
 
     <div class="container">
       <h2>Id:</h2>
