@@ -14,20 +14,21 @@
 </head>
 
 <body>
-  <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search table..." aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-      <button class="btn btn-outline-primary" type="button">Search</button>
-    </div>
-  </div>
+
   <div class="container">
-    
-    <button class="btn btn-success mb-2">By Title</button>
-    <button class="btn btn-success mb-2">By Author</button>
-    <button class="btn btn-success mb-2">By Barcode</button>
+    <div class="input-group mb-2 mt-3">
+      <input type="text" class="form-control" id="search-input" placeholder="Search table..."
+        aria-label="Recipient's username" aria-describedby="basic-addon1">
+      <div class="input-group-append">
+        <button class="btn btn-success" onclick="searchTable()" type="button">Search</button>
+        <button class="btn btn-success" type="button">By Title</button>
+        <button class="btn btn-success">By Author</button>
+        <button class="btn btn-success">By Barcode</button>
+      </div>
+    </div>
 
     <div id="true-table">
-      <table class="table table-hover table-striped id="table-id">
+      <table class="table table-hover table-striped" id="table-id">
         <thead class="table-dark">
           <tr>
             <th scope="col">Id</th>
@@ -50,70 +51,75 @@
   </div>
 
   <div class="container">
-    <h2>Sort Section:</h2>
-    <input />
 
-    <button onclick="bubbleSort()">Bubble Sort</button>
-    <button onclick="selectionSort()">Selection Sort</button>
-    <button onclick="insertionSort()">Insertion Sort</button>
-
-    <h2>Process Log:</h2>
-    <button>Process Log</button>
-    <div class="container" id="log-div">
-
+    <div class="input-group mb-2 mt-3">
+      <input type="text" class="form-control" id="search-input" placeholder="Section..."
+        aria-label="Recipient's username" aria-describedby="basic-addon1">
+      <div class="input-group-append">
+        <button onclick="bubbleSort()" class="btn btn-success">Bubble Sort</button>
+        <button onclick="selectionSort()" class="btn btn-success">Selection Sort</button>
+        <button onclick="insertionSort()" class="btn btn-success">Insertion Sort</button>
+      </div>
     </div>
 
-    <h2>Display Binary Tree:</h2>
-    <button onclick="preorderTraverseTree()">Pre-Order</button>
-    <button onclick="inorderTraversal()">In-Order</button>
-    <button onclick="postorderTraversal()">Post-Order</button>
-    <button>Graphical</button>
+    <div class="container">
+      <h2 class="h2">Process Log:</h2>
+        <button class="btn btn-success">Process Log</button>
+        <div class = "mh-100 info" style = "width: 230px; height: 200px; overflow: auto;" id="log-div">
 
-    <h2>HashMap / Set:</h2>
-    <button>Save</button>
-    <button>Display</button>
+        </div>
 
-    <h2>Automation Request:</h2>
+        <h2>Display Binary Tree:</h2>
+        <button onclick="preorderTraverseTree()">Pre-Order</button>
+        <button onclick="inorderTraversal()">In-Order</button>
+        <button onclick="postorderTraversal()">Post-Order</button>
+        <button>Graphical</button>
 
-    <button>Retrieve</button>
-    <button>Remove</button>
-    <button>Return</button>
-    <button>Add</button>
-  </div>
+        <h2>HashMap / Set:</h2>
+        <button>Save</button>
+        <button>Display</button>
 
-  <div class="container">
-    <h2>Id:</h2>
-    <input id="id-input">
+        <h2>Automation Request:</h2>
 
-    <h2>Title:</h2>
-    <input id="title-input">
+        <button>Retrieve</button>
+        <button>Remove</button>
+        <button>Return</button>
+        <button>Add</button>
+    </div>
 
-    <h2>Section:</h2>
-    <input id="section-input">
+    <div class="container">
+      <h2>Id:</h2>
+      <input id="id-input">
 
-    <h2>Author:</h2>
-    <input id="author-input">
+      <h2>Title:</h2>
+      <input id="title-input">
 
-    <h2>X:</h2>
-    <input id="x-input">
+      <h2>Section:</h2>
+      <input id="section-input">
 
-    <h2>Y:</h2>
-    <input id="y-input">
+      <h2>Author:</h2>
+      <input id="author-input">
 
-    <h2>BarCode:</h2>
-    <input id="bar-code-input" />
+      <h2>X:</h2>
+      <input id="x-input">
 
-    <h2>OnLoan:</h2>
-    <input id="on-loan-input" />
+      <h2>Y:</h2>
+      <input id="y-input">
 
-    <h2>Description:</h2>
-    <textarea id="description-input"></textarea>
-    <br />
+      <h2>BarCode:</h2>
+      <input id="bar-code-input" />
 
-    <button onclick="addItemToTable()">Add</button>
-    <button onclick="updateItemInTable()">Update</button>
-    <button onclick="deleteItemInTable()">Delete</button>
-  </div>
+      <h2>OnLoan:</h2>
+      <input id="on-loan-input" />
+
+      <h2>Description:</h2>
+      <textarea id="description-input"></textarea>
+      <br />
+
+      <button onclick="addItemToTable()">Add</button>
+      <button onclick="updateItemInTable()">Update</button>
+      <button onclick="deleteItemInTable()">Delete</button>
+    </div>
 
 </body>
 
