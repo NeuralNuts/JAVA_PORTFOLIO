@@ -43,7 +43,7 @@
           </tr>
         </thead>
 
-        <tbody id="my-table">
+        <tbody id="my-table" href="#crud">
 
         </tbody>
       </table>
@@ -81,67 +81,71 @@
         <button class="btn btn-success mt-2">Remove</button>
         <button class="btn btn-success mt-2">Return</button>
         <button class="btn btn-success mt-2">Add</button>
+        <div class="mh-100 info mt-2 mb-2" style="width: 100%; border: solid; border-color: rgba(143, 143, 143, 0.2); border-width: 2px; border-radius: 5px; height: 200px; overflow: auto;" id="log-div">
 
-      </div>
-
-      <div class="mh-100 info" style="width: 230px; height: 200px; overflow: auto;" id="log-div">
-
-      </div>
-    </div>
-
-    <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            ...
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
-          </div>
         </div>
       </div>
+
+      <div class="container" id="crud">
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">Id:</label>
+          <input type="text" class="form-control" id="id-input" placeholder="Id..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">Title:</label>
+          <input type="text" class="form-control"  id="title-input" placeholder="Title..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">Section:</label>
+          <input type="text" class="form-control" id="section-input" placeholder="Section..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">Author:</label>
+          <input type="text" class="form-control" id="author-input" placeholder="Author..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">X:</label>
+          <input type="text" class="form-control" id="x-input" placeholder="X..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">Y:</label>
+          <input type="text" class="form-control" id="y-input" placeholder="Y..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">Bar Code:</label>
+          <input type="text" class="form-control" id="bar-code-input" placeholder="Bar code..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <div class="input-group-append">
+          <label for="exampleFormControlTextarea6">On Loan:</label>
+          <input type="text" class="form-control" id="on-loan-input" placeholder="On loan..."
+            aria-label="Recipient's username" aria-describedby="basic-addon1">
+        </div>
+  
+        <label for="exampleFormControlTextarea6">Description:</label>
+        <textarea class="form-control z-depth-1 mt-2" id="description-input" rows="3"
+            placeholder="Waiting..."></textarea>
+  
+        <button class="btn btn-success mb-2 mt-2" onclick="addItemToTable()">Add</button>
+        <button class="btn btn-success mb-2 mt-2" onclick="updateItemInTable()">Update</button>
+        <button class="btn btn-success mb-2 mt-2" onclick="deleteItemInTable()">Delete</button>
+      </div>  
     </div>
-    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">open</a>
-
-    <div class="container">
-      <h2>Id:</h2>
-      <input id="id-input">
-
-      <h2>Title:</h2>
-      <input id="title-input">
-
-      <h2>Section:</h2>
-      <input id="section-input">
-
-      <h2>Author:</h2>
-      <input id="author-input">
-
-      <h2>X:</h2>
-      <input id="x-input">
-
-      <h2>Y:</h2>
-      <input id="y-input">
-
-      <h2>BarCode:</h2>
-      <input id="bar-code-input" />
-
-      <h2>OnLoan:</h2>
-      <input id="on-loan-input" />
-
-      <h2>Description:</h2>
-      <textarea id="description-input"></textarea>
-      <br />
-
-      <button onclick="addItemToTable()">Add</button>
-      <button onclick="updateItemInTable()">Update</button>
-      <button onclick="deleteItemInTable()">Delete</button>
-    </div>
-
+  </div>
+    
 </body>
 
 <script>
