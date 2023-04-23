@@ -3,8 +3,8 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Hello World!</title>
-  <link rel="stylesheet" href="index.css" />
+  <title>Automation Console</title>
+  <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.min.css" />
   <script src="node_modules/socket.io/client-dist/socket.io.js"></script>
   <script src="./js/socket_functions.js"></script>
   <script src="./js/crud_functions.js"></script>
@@ -12,73 +12,71 @@
 </head>
 
 <body>
-  <div class="god-div">
-    <div id="chat-log"></div>
+  <div class="container" id="true-table">
+    <h2>Process:</h2>
+    <div class="input-group mb-2 mt-3">
+      <select id="select-process" class="form-select">
+        <option>Add</option>
+        <option>Remove</option>
+        <option>Retrieve</option>
+        <option>Sort</option>
+        <option>Return</option>
+      </select>
 
-    <div class="parent-div" id="true-table">
-      <div class="child-div-2">
-        <h2>Search String:</h2>
-        <select id="select-process">
-          <option>Add</option>
-          <option>Remove</option>
-          <option>Retrieve</option>
-          <option>Sort</option>
-          <option>Return</option>
-        </select>
-        <button onclick="DisplayAddItemButton()">Process</button>
-
-        <h2>Bar Code of Selected Item:</h2>
-        <input id="bar-code-input"/>
-        <h2>Sedction:</h2>
-        <input id="section-input"/>
-        <form id="message-form">
-          <button type="submit" id="add-item" class="add-item-button">Add Item</button>
-        </form>
-      <div>
-
-      <div class="child-div">
-        <div class="tbody-div">
-          <table id="table-id">
-            <thread>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Section</th>
-              <th>X</th>
-              <th>Y</th>
-              <th>Barcode</th>
-              <th>Description</th>
-            </thread>
-  
-            <tbody id="my-table">
-              <td>B</td>
-              <td>A</td>
-              <td>Q</td>
-              <td>P</td>
-              <td>U</td>
-              <td>Y</td>
-              <td>T</td>
-            </tbody>
-
-            <tbody id="my-table">
-              <td>ss</td>
-              <td>ff</td>
-              <td>hh</td>
-              <td>aa</td>
-              <td>qq</td>
-              <td>ii</td>
-              <td>pp</td>
-            </tbody>
-          </table>
-        </div>
+      <div class="input-group-append">
+        <button onclick="DisplayAddItemButton()" class="btn btn-success">Process</button>
       </div>
-      <input id="y-input" class="secret-input"/>
-      <input id="x-input" class="secret-input"/>
     </div>
+
+    <label for="exampleFormControlTextarea6">Bar Code of Selected Item:</label>
+    <input id="bar-code-input" class="form-control mb-2" placeholder="Bar code..." />
+    <label for="exampleFormControlTextarea6">Section of Selected Item:</label>
+    <input id="section-input" class="form-control mb-2" placeholder="Section..." />
+    <form id="message-form">
+      <button type="submit" id="add-item" class="btn btn-success mb-2">Add Item</button>
+    </form>
+
+    <table class="table table-hover table-striped" id="table-id">
+      <thread class="table-dark">
+        <tr>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Section</th>
+          <th scope="col">X</th>
+          <th scope="col">Y</th>
+          <th scope="col">Barcode</th>
+          <th scope="col">Description</th>
+        </tr>
+      </thread>
+
+      <tbody id="my-table">
+        <td>B</td>
+        <td>A</td>
+        <td>Q</td>
+        <td>P</td>
+        <td>U</td>
+        <td>Y</td>
+        <td>T</td>
+      </tbody>
+
+      <tbody id="my-table">
+        <td>ss</td>
+        <td>ff</td>
+        <td>hh</td>
+        <td>aa</td>
+        <td>qq</td>
+        <td>ii</td>
+        <td>pp</td>
+      </tbody>
+    </table>
+    <input id="y-input" style="border: none; color: transparent;"/>
+    <input id="x-input" style="border: none; color: transparent;"/>
   </div>
 </body>
 
 <script>
   highlight_row();
-  
+
 </script>
+
 </html>
