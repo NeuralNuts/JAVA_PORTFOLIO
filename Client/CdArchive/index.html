@@ -27,38 +27,39 @@
       </div>
     </div>
 
-    <div id="true-table">
-      <table class="table table-hover table-striped" id="table-id">
-        <thead class="table-dark">
-          <tr>
-            <th scope="col">Id</th>
-            <th scope="col">Title</th>
-            <th scope="col">Author</th>
-            <th scope="col">Section</th>
-            <th scope="col">X</th>
-            <th scope="col">Y</th>
-            <th scope="col">Barcode</th>
-            <th scope="col">Description</th>
-            <th scope="col">On-Loan</th>
-          </tr>
-        </thead>
+    <div class="container">
 
-        <tbody id="my-table" href="#crud">
+      <div class="input-group mb-2 mt-3">
+        <input type="text" class="form-control" id="search-input" placeholder="Section..."
+          aria-label="Recipient's username" aria-describedby="basic-addon1">
+        <div class="input-group-append">
+          <button onclick="bubbleSort()" class="btn btn-success">Bubble Sort</button>
+          <button onclick="selectionSort()" class="btn btn-success">Selection Sort</button>
+          <button onclick="insertionSort()" class="btn btn-success">Insertion Sort</button>
+        </div>
+      </div>
 
-        </tbody>
-      </table>
-    </div>
-  </div>
+      <div id="true-table" class="mh-100" style="width: 100%; border: solid; border-color: rgba(143, 143, 143, 0.2); border-width: 2px; border-radius: 5px; height: 500px; overflow: auto;">
 
-  <div class="container">
+        <table class="table table-hover table-striped" id="table-id">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Title</th>
+              <th scope="col">Author</th>
+              <th scope="col">Section</th>
+              <th scope="col">X</th>
+              <th scope="col">Y</th>
+              <th scope="col">Barcode</th>
+              <th scope="col">Description</th>
+              <th scope="col">On-Loan</th>
+            </tr>
+          </thead>
 
-    <div class="input-group mb-2 mt-3">
-      <input type="text" class="form-control" id="search-input" placeholder="Section..."
-        aria-label="Recipient's username" aria-describedby="basic-addon1">
-      <div class="input-group-append">
-        <button onclick="bubbleSort()" class="btn btn-success">Bubble Sort</button>
-        <button onclick="selectionSort()" class="btn btn-success">Selection Sort</button>
-        <button onclick="insertionSort()" class="btn btn-success">Insertion Sort</button>
+          <tbody id="my-table" onclick="window.location='#crud';">
+
+          </tbody>
+        </table>
       </div>
     </div>
 
@@ -81,7 +82,9 @@
         <button class="btn btn-success mt-2">Remove</button>
         <button class="btn btn-success mt-2">Return</button>
         <button class="btn btn-success mt-2">Add</button>
-        <div class="mh-100 info mt-2 mb-2" style="width: 100%; border: solid; border-color: rgba(143, 143, 143, 0.2); border-width: 2px; border-radius: 5px; height: 200px; overflow: auto;" id="log-div">
+        <div class="mh-100 info mt-2 mb-2"
+          style="width: 100%; border: solid; border-color: rgba(143, 143, 143, 0.2); border-width: 2px; border-radius: 5px; height: 200px; overflow: auto;"
+          id="log-div">
 
         </div>
       </div>
@@ -89,66 +92,67 @@
       <div class="container" id="crud">
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">Id:</label>
-          <input type="text" class="form-control" id="id-input" placeholder="Id..."
-            aria-label="Recipient's username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" id="id-input" placeholder="Id..." aria-label="Recipient's username"
+            aria-describedby="basic-addon1">
         </div>
-  
+
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">Title:</label>
-          <input type="text" class="form-control"  id="title-input" placeholder="Title..."
+          <input type="text" class="form-control" id="title-input" placeholder="Title..."
             aria-label="Recipient's username" aria-describedby="basic-addon1">
         </div>
-  
+
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">Section:</label>
           <input type="text" class="form-control" id="section-input" placeholder="Section..."
             aria-label="Recipient's username" aria-describedby="basic-addon1">
         </div>
-  
+
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">Author:</label>
           <input type="text" class="form-control" id="author-input" placeholder="Author..."
             aria-label="Recipient's username" aria-describedby="basic-addon1">
         </div>
-  
+
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">X:</label>
-          <input type="text" class="form-control" id="x-input" placeholder="X..."
-            aria-label="Recipient's username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" id="x-input" placeholder="X..." aria-label="Recipient's username"
+            aria-describedby="basic-addon1">
         </div>
-  
+
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">Y:</label>
-          <input type="text" class="form-control" id="y-input" placeholder="Y..."
-            aria-label="Recipient's username" aria-describedby="basic-addon1">
+          <input type="text" class="form-control" id="y-input" placeholder="Y..." aria-label="Recipient's username"
+            aria-describedby="basic-addon1">
         </div>
-  
+
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">Bar Code:</label>
           <input type="text" class="form-control" id="bar-code-input" placeholder="Bar code..."
             aria-label="Recipient's username" aria-describedby="basic-addon1">
         </div>
-  
+
         <div class="input-group-append">
           <label for="exampleFormControlTextarea6">On Loan:</label>
           <input type="text" class="form-control" id="on-loan-input" placeholder="On loan..."
             aria-label="Recipient's username" aria-describedby="basic-addon1">
         </div>
-  
+
         <label for="exampleFormControlTextarea6">Description:</label>
         <textarea class="form-control z-depth-1 mt-2" id="description-input" rows="3"
-            placeholder="Waiting..."></textarea>
-  
+          placeholder="Waiting..."></textarea>
+
         <button class="btn btn-success mb-2 mt-2" onclick="addItemToTable()">Add</button>
         <button class="btn btn-success mb-2 mt-2" onclick="updateItemInTable()">Update</button>
         <button class="btn btn-success mb-2 mt-2" onclick="deleteItemInTable()">Delete</button>
-      </div>  
+      </div>
     </div>
   </div>
-    
+
 </body>
 
 <script>
+
   loadDataTree();
   loadData();
 </script>

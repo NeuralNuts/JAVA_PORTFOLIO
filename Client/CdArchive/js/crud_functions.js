@@ -120,7 +120,8 @@ function addItemToTable() {
     db.run(insert_data, [title_input, author_input, section_input, x_input, y_input, bar_code_input, description_input, "No"],
         (err) => {
             if (err) return console.error(err.message)
-            window.location.reload()
+            window.location.href='#top';
+            window.location.reload();
         })
 }
 
