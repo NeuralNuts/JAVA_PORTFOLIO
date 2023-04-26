@@ -202,19 +202,12 @@ window.addEventListener('load', () => {
         // const message = sectionInput.value;
 
         // document.getElementById('').innerHTML = "";
-        var myTab = document.getElementById('my-table');
+        //get_data = `SELECT * FROM archive`;
 
-        // LOOP THROUGH EACH ROW OF THE TABLE AFTER HEADER.
-        for (i = 1; i < myTab.rows.length; i++) {
-
-            // GET THE CELLS COLLECTION OF THE CURRENT ROW.
-            var objCells = myTab.rows.item(i).cells;
-
-            // LOOP THROUGH EACH CELL OF THE CURENT ROW TO READ CELL VALUES.
-            for (var j = 0; j < objCells.length; j++) {
-                
-                socket.emit('table', objCells.item(j).innerHTML);
-            }
-        }
+        var source = document.getElementById('my-table');
+        var destination = document.getElementById('my-table-2');
+        var copy = source.cloneNode(true);
+        destination.parentNode.replaceChild(copy, destination);
+        console.log(destination)
     });
 })

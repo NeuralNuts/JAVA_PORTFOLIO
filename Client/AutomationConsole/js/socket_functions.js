@@ -63,31 +63,4 @@ socket.on('table', (data) => {
 
     // newMessage.value = myDoublyList.append("fdfd");
     console.log(data)
-
-    // let rows = 0
-
-    // table = document.getElementById("my-table");
-
-    // //console.log(row)
-
-    // for (let row of rows) {
-
-    //     const tr = document.createElement('tr');
-    //     const content = `<td>${row.id}</td>
-    //       <td>${row.title}</td>
-    //       <td>${row.author}</td>
-    //       <td>${row.section}</td>
-    //       <td>${row.x}</td>
-    //       <td>${row.y}</td>
-    //       <td>${row.barcode}</td>
-    //       <td>${row.description}</td>
-    //       <td>${row.on_loan}</td>`;
-
-    //     tr.innerHTML = content;
-    //     table.appendChild(tr)
-    // }
-    //chatLog.appendChild(newMessage);
-
-
-    // const sectionInput = document.getElementById("section-input")
 });
