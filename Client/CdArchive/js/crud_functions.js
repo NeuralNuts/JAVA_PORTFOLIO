@@ -35,7 +35,7 @@ function loadData() {
 
         for (let row of rows) {
 
-            console.log(row)
+            //console.log(row)
 
             const tr = document.createElement('tr');
             const content = `<td>${row.id}</td>

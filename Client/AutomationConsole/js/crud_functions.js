@@ -1,3 +1,13 @@
+const sqlite3 = require('sqlite3').verbose();
+
+let insert_data;
+let get_data;
+
+const db = new sqlite3.Database("./archive.db", sqlite3.OPEN_READWRITE, (err) => {
+
+    if (err) return console.error(err.message);
+});
+
 function highlight_row() {
 
     var section_input = $("#section-input");
@@ -32,6 +42,40 @@ function highlight_row() {
         }
     }
 }
+
+function loadData() {
+
+    get_data = `SELECT * FROM archive`;
+
+    db.all(get_data, [], (err, rows) => {
+
+        table = document.getElementById("my-table");
+        let tr = table.insertRow();
+
+        if (err) return console.error(err.message);
+
+        for (let row of rows) {
+
+            console.log(row)
+
+            const tr = document.createElement('tr');
+            const content = 
+         `<td>${row.title}</td>
+          <td>${row.author}</td>
+          <td>${row.section}</td>
+          <td>${row.x}</td>
+          <td>${row.y}</td>
+          <td>${row.barcode}</td>
+          <td>${row.description}</td>`;
+
+            tr.innerHTML = content;
+            table.appendChild(tr)
+        }
+
+        highlight_row()
+    }
+    )
+};
 
 function DisplayAddItemButton() {
 
