@@ -40,6 +40,12 @@ sockio.on('connection', (socket) => {
         // Broadcast the message to all connected clients
         sockio.emit('message_y', data);
     });
+    socket.on('table', (data) => {
+        console.log(`Received message: ${data}`);
+
+        // Broadcast the message to all connected clients
+        sockio.emit('table', data);
+    });
 });
 
 // Start the server

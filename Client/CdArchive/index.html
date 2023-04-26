@@ -40,7 +40,8 @@
         </div>
       </div>
 
-      <div id="true-table" class="mh-100" style="width: 100%; border: solid; border-color: rgba(143, 143, 143, 0.2); border-width: 2px; border-radius: 5px; height: 475px; overflow: auto;">
+      <div id="true-table" class="mh-100"
+        style="width: 100%; border: solid; border-color: rgba(143, 143, 143, 0.2); border-width: 2px; border-radius: 5px; height: 475px; overflow: auto;">
 
         <table class="table table-hover table-striped" id="table-id">
           <thead class="table-dark">
@@ -78,11 +79,13 @@
         <label for="exampleFormControlTextarea6">Hash map:</label>
         <button class="btn btn-success mt-2">Save</button>
         <button class="btn btn-success mt-2">Display</button>
-        <label for="exampleFormControlTextarea6">Automation req:</label>
-        <button class="btn btn-success mt-2">Retrieve</button>
-        <button class="btn btn-success mt-2">Remove</button>
-        <button class="btn btn-success mt-2">Return</button>
-        <button class="btn btn-success mt-2">Add</button>
+        <form id="message-form">
+          <label for="exampleFormControlTextarea6">Automation req:</label>
+          <button class="btn btn-success mt-2">Retrieve</button>
+          <button class="btn btn-success mt-2">Remove</button>
+          <button type="submit" class="btn btn-success mt-2">Return</button>
+          <button class="btn btn-success mt-2">Add</button>
+        </form>
 
         <label for="exampleFormControlTextarea6">Process Log:</label>
         <div class="mh-100 info mt-2 mb-2"

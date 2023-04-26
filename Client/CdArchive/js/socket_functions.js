@@ -193,14 +193,27 @@ socket.on('message_y', (data) => {
     yInput.value = data
 });
 
+// window.addEventListener('load', () => {
+//     const form = document.getElementById('message-form');
+//     form.addEventListener('submit', (event) => {
+//         event.preventDefault();
+//         const messageInput = document.getElementById('message-input');
+//         const message = messageInput.value;
+//         socket.emit('message', message);
+//         messageInput.value = '';
+//     });
+// })
+// Handle form submission to send messages
+
 window.addEventListener('load', () => {
     const form = document.getElementById('message-form');
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        const messageInput = document.getElementById('message-input');
-        const message = messageInput.value;
-        socket.emit('message', message);
-        messageInput.value = '';
+        // const sectionInput = document.getElementById('title-input');
+        // const message = sectionInput.value;
+        console.log("jj")
+        socket.emit('table', "works!");
+        //sectionInput.value = '';
     });
 })
- // Handle form submission to send messages
