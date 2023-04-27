@@ -31,6 +31,7 @@
     "style-loader": "^3.3.2"
   },
   "dependencies": {
+    "bower": "^1.8.14",
     "csv": "^6.2.8",
     "csv-parse": "^5.3.6",
     "electron-squirrel-startup": "^1.0.0",

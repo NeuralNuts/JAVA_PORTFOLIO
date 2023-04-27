@@ -147,13 +147,12 @@ socket.on('message', (data) => {
     const chatLog = document.getElementById('log-div');
     const newMessage = document.createElement('input');
 
-    let myDoublyList = new DoublyLinkedList("s");
+    let myDoublyList = new DoublyLinkedList(data);
 
-    newMessage.value = myDoublyList.append("fdfd");
-
-    chatLog.appendChild(newMessage);
-
-
+    var d = myDoublyList.append(data);
+    console.log(d)
+    newMessage.value = myDoublyList.printList()
+    chatLog.appendChild(newMessage.);
     const sectionInput = document.getElementById("section-input")
 });
 
