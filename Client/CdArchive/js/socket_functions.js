@@ -29,7 +29,7 @@ class DoublyLinkedList {
             currentList = currentList.next;
         }
 
-        console.log(array.join(' <--> '));
+        array.join(' <--> ');
         return this;
     }
 
@@ -149,11 +149,22 @@ socket.on('message', (data) => {
 
     let myDoublyList = new DoublyLinkedList(data);
 
-    var d = myDoublyList.append(data);
-    console.log(d)
-    newMessage.value = myDoublyList.printList()
-    chatLog.appendChild(newMessage.);
+    // var d = myDoublyList.append(data);
+    // //newMessage.value = myDoublyList.printList(data)
+
+    // var data_1 = {
+    //     l: myDoublyList.printList(data)
+    // }
+
+    // data_1 = newMessage.value
+
+    console.log(myDoublyList.printList(data))
+
+    console.log(newMessage.value)
     const sectionInput = document.getElementById("section-input")
+    newMessage.value = JSON.stringify(myDoublyList.printList(data))
+    var a = JSON.stringify(myDoublyList.printList(data))
+    
 });
 
 socket.on('message_2', (data) => {
