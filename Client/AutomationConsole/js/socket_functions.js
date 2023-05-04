@@ -21,12 +21,7 @@ window.addEventListener('load', () => {
         event.preventDefault();
         const sectionInput = document.getElementById('section-input');
         const message = sectionInput.value;
-
-        let message_obj = {
-            data_1: message
-        }
-
-        socket.emit('message', JSON.stringify(message_obj));
+        socket.emit('message', message);
         sectionInput.value = '';
     });
 

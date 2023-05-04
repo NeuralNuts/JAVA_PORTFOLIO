@@ -1,6 +1,11 @@
 // Connect to the server using socket.io
 const socket = io("http://localhost:3000");
 console.log(socket)
+window.$ = window.jQuery = require('jquery');
+var today = new Date();
+var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var dateTime = date + time;
 
 class Node_2 {
     constructor(value) {
@@ -141,52 +146,40 @@ class DoublyLinkedList {
 }
 
 // Listen for incoming messages from the server
-socket.on('message', (data) => {
+socket.on('message', (section_data) => {
     //Add the message to the chat log
+    var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
+    var chatLog = document.getElementById('log-div');
+    chatLog.innerHTML = newMessage
+    const sectionInput = document.getElementById('pro-log-input')
+    sectionInput.value = section_data;
+    chatLog.appendChild(sectionInput);
+    console.log(section_data)
 
-    const chatLog = document.getElementById('log-div');
-    const newMessage = document.createElement('input');
+    socket.on('message_2', (barcode_data) => {
+        //Add the message to the chat log
+        const chatLog = document.getElementById('log-div');
+        const newMessage = document.createElement('input');
+        newMessage.value = barcode_data;
+        chatLog.appendChild(newMessage);
+        const barCodeInput = document.getElementById("bar-code-input")
+        barCodeInput.value = barcode_data
+        console.log(barcode_data)
 
-    let myDoublyList = new DoublyLinkedList(data);
-
-    // var d = myDoublyList.append(data);
-    // //newMessage.value = myDoublyList.printList(data)
-
-    // var data_1 = {
-    //     l: myDoublyList.printList(data)
-    // }
-
-    // data_1 = newMessage.value
-
-    console.log(myDoublyList.printList(data))
-
-    console.log(newMessage.value)
-    const sectionInput = document.getElementById("section-input")
-    newMessage.value = JSON.stringify(myDoublyList.printList(data))
-    var a = JSON.stringify(myDoublyList.printList(data))
-    
+        myArray = [dateTime, section_data, barcode_data]
+        var myDoublyList = new DoublyLinkedList(myArray);
+        console.log(myDoublyList.printList())
+        sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+    });
 });
 
-socket.on('message_2', (data) => {
-    //Add the message to the chat log
-    const chatLog = document.getElementById('log-div');
-    const newMessage = document.createElement('input');
-    newMessage.value = data;
 
-    chatLog.appendChild(newMessage);
-
-    const barCodeInput = document.getElementById("bar-code-input")
-    barCodeInput.value = data
-});
 
 socket.on('message_x', (data) => {
     //Add the message to the chat log
     const chatLog = document.getElementById('log-div');
     const newMessage = document.createElement('input');
     newMessage.value = data;
-
-    // chatLog.appendChild(newMessage);
-
     const xInput = document.getElementById("x-input")
     xInput.value = data
 });
@@ -221,3 +214,4 @@ window.addEventListener('load', () => {
         console.log(destination)
     });
 })
+//console.log(myDoublyList.printList())
