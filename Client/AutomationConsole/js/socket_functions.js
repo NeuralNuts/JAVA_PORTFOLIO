@@ -54,13 +54,6 @@ window.addEventListener('load', () => {
 })
 
 socket.on('table', (data) => {
-    //Add the message to the chat log
-
-    // const chatLog = document.getElementById('log-div');
-    // const newMessage = document.createElement('input');
-
-    // let myDoublyList = new DoublyLinkedList("s");
-
-    // newMessage.value = myDoublyList.append("fdfd");
+    bubbleSort();
     console.log(data)
 });

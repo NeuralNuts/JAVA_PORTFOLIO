@@ -33,7 +33,7 @@ socket.on('message', (section_data) => {
             socket.on('message_y', (y_data) => {
                 const yInput = document.getElementById("y-input")
                 yInput.value = y_data
-    
+
                 results = `Date/Time: ${dateTime} | ${section_data} | ${barcode_data} | ${x_data} | ${y_data} | ADD-FROM-ROBOT`
                 var myDoublyList = new DoublyLinkedList(results);
                 sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
@@ -45,13 +45,60 @@ socket.on('message', (section_data) => {
 
 window.addEventListener('load', () => {
     const form = document.getElementById('message-form');
+    const form2 = document.getElementById('message-form2');
+    const form3 = document.getElementById('message-form3');
+    const form4 = document.getElementById('message-form4');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
-        var source = document.getElementById('my-table');
-        var destination = document.getElementById('my-table-2');
-        var copy = source.cloneNode(true);
-        destination.parentNode.replaceChild(copy, destination);
-        console.log(destination)
+        message = "sort"
+        var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
+        var chatLog_1 = document.getElementById('log-div');
+        chatLog_1.innerHTML = newMessage
+        const sectionInput = document.getElementById('pro-log-input')
+        results = `Date/Time: ${dateTime} | RETURN-SORTED-CD-ARCHIVE-TABLE-TO-ROBOT`
+        var myDoublyList = new DoublyLinkedList(results);
+        sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        chatLog_1.appendChild(sectionInput);
+        socket.emit('table', message);
+    });
+    form2.addEventListener('submit', (event) => {
+        event.preventDefault();
+        var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
+        var chatLog_1 = document.getElementById('log-div');
+        chatLog_1.innerHTML = newMessage
+        const sectionInput = document.getElementById('pro-log-input')
+        results = `Date/Time: ${dateTime} RETRIEVE-CD-FROM-ROBOT`
+        var myDoublyList = new DoublyLinkedList(results);
+        sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        chatLog_1.appendChild(sectionInput);
+        message = "retrieve cd"
+        socket.emit('table', message);
+    });
+    form3.addEventListener('submit', (event) => {
+        event.preventDefault();
+        message = "sort"
+        var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
+        var chatLog_1 = document.getElementById('log-div');
+        chatLog_1.innerHTML = newMessage
+        const sectionInput = document.getElementById('pro-log-input')
+        results = `Date/Time: ${dateTime} REMOVE-CD-FROM-ROBOT`
+        var myDoublyList = new DoublyLinkedList(results);
+        sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        chatLog_1.appendChild(sectionInput);
+        socket.emit('table', message);
+    });
+    form4.addEventListener('submit', (event) => {
+        event.preventDefault();
+        message = "sort"
+        var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
+        var chatLog_1 = document.getElementById('log-div');
+        chatLog_1.innerHTML = newMessage
+        const sectionInput = document.getElementById('pro-log-input')
+        results = `Date/Time: ${dateTime} ADD-CD-TO-ROBOT`
+        var myDoublyList = new DoublyLinkedList(results);
+        sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        chatLog_1.appendChild(sectionInput);
+        socket.emit('table', message);
     });
 })

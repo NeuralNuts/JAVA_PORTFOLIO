@@ -136,7 +136,7 @@ class DoublyLinkedList {
           currentList = currentList.next;
       }
 
-      //array.join('<-->');
+      array.join('<-->');
       return this;
   }
 

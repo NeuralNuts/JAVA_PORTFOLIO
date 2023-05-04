@@ -8,6 +8,7 @@
   <script src="node_modules/socket.io/client-dist/socket.io.js"></script>
   <script src="./js/socket_functions.js"></script>
   <script src="./js/crud_functions.js"></script>
+  <script src="./js/sorting_algorithms.js"></script>
   <script>window.$ = window.jQuery = require('jquery');</script>
 </head>
 
@@ -50,7 +51,7 @@
       </thread>
 
       <tbody id="my-table">
-        <tr>
+        <!-- <tr>
           <td>title</yd>
           <td>author</yd>
           <td>section</yd>
@@ -58,7 +59,7 @@
           <td>y</yd>
           <td>barcode</yd>
           <td>description</yd>
-        </tr>
+        </tr> -->
       </tbody>
 
     </table>
@@ -69,7 +70,7 @@
 
 <script>
   highlight_row();
-
+  loadData();
 </script>
 
 </html>
