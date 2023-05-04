@@ -34,7 +34,7 @@ class DoublyLinkedList {
             currentList = currentList.next;
         }
 
-        array.join(' <--> ');
+        //array.join('<-->');
         return this;
     }
 
@@ -164,10 +164,9 @@ socket.on('message', (section_data) => {
         chatLog.appendChild(newMessage);
         const barCodeInput = document.getElementById("bar-code-input")
         barCodeInput.value = barcode_data
-        console.log(barcode_data)
 
-        myArray = [dateTime, section_data, barcode_data]
-        var myDoublyList = new DoublyLinkedList(myArray);
+        results = `Date/Time: ${dateTime} | ${section_data} | ${barcode_data}`
+        var myDoublyList = new DoublyLinkedList(results);
         console.log(myDoublyList.printList())
         sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
     });
