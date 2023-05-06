@@ -1,112 +1,189 @@
-class Node {
-  constructor(key, name) {
-    this.key = key;
-    this.name = name;
-    this.leftChild = null;
-    this.rightChild = null;
-  }
-  toString() {
-    //return `${this.name}has the key${this.key}`;
-    //return this.name + " has the key " + this.key + "\nLeft Child: " + this.leftChild + "\nRight Child: " + this.rightChild + "\n";
+// Define the Node class
+class Node_3 {
+  constructor(value) {
+    this.value = value;
+    this.left = null;
+    this.right = null;
   }
 }
 
+// Define the Binary Tree class
 class BinaryTree {
   constructor() {
     this.root = null;
   }
-  addNode(key, name) {
-    const newNode = new Node(key, name);
-    if (this.root === null) {
+
+  // Insert a value into the tree
+  insert(value) {
+    const newNode = new Node_3(value);
+
+    if (!this.root) {
+      // If the tree is empty, set the root to the new node
       this.root = newNode;
     } else {
-      let focusNode = this.root;
-      let parent;
+      // Traverse the tree to find the correct position for the new node
+      let currentNode = this.root;
       while (true) {
-        parent = focusNode;
-        if (key < focusNode.key) {
-          focusNode = focusNode.leftChild;
-          if (focusNode === null) {
-            parent.leftChild = newNode;
-            return;
+        if (value < currentNode.value) {
+          // If the value is less than the current node, go left
+          if (!currentNode.left) {
+            // If there's no left child, insert the new node as the left child
+            currentNode.left = newNode;
+            return this;
           }
+          // Otherwise, set the current node to the left child and continue traversing
+          currentNode = currentNode.left;
         } else {
-          focusNode = focusNode.rightChild;
-          if (focusNode === null) {
-            parent.rightChild = newNode;
-            return;
+          // If the value is greater than or equal to the current node, go right
+          if (!currentNode.right) {
+            // If there's no right child, insert the new node as the right child
+            currentNode.right = newNode;
+            return this;
           }
+          // Otherwise, set the current node to the right child and continue traversing
+          currentNode = currentNode.right;
         }
       }
     }
   }
-  inOrderTraverseTree(focusNode) {
-    if (focusNode !== null) {
-      this.inOrderTraverseTree(focusNode.leftChild);
-      console.log(focusNode.toString());
-      this.inOrderTraverseTree(focusNode.rightChild);
+
+  // Traverse the tree in pre-order and return an array of node values
+  preOrder() {
+    const values = [];
+
+    function traverse(node) {
+      if (!node) return;
+      values.push(node.value);
+      traverse(node.left);
+      traverse(node.right);
     }
+
+    traverse(this.root);
+
+    return values;
   }
-  preorderTraverseTree(focusNode) {
-    if (focusNode !== null) {
-      console.log(focusNode.toString());
-      this.preorderTraverseTree(focusNode.leftChild);
-      this.preorderTraverseTree(focusNode.rightChild);
+
+  // Traverse the tree in post-order and return an array of node values
+  postOrder() {
+    const values = [];
+
+    function traverse(node) {
+      if (!node) return;
+      traverse(node.left);
+      traverse(node.right);
+      values.push(node.value);
     }
+
+    traverse(this.root);
+
+    return values;
   }
-  postOrderTraverseTree(focusNode) {
-    if (focusNode !== null) {
-      this.postOrderTraverseTree(focusNode.leftChild);
-      this.postOrderTraverseTree(focusNode.rightChild);
-      console.log(focusNode.toString());
+
+  // Traverse the tree in in-order and return an array of node values
+  inOrder() {
+    const values = [];
+
+    function traverse(node) {
+      if (!node) return;
+      traverse(node.left);
+      values.push(node.value);
+      traverse(node.right);
     }
-  }
-  findNode(key) {
-    let focusNode = this.root;
-    while (focusNode.key !== key) {
-      if (key < focusNode.key) {
-        focusNode = focusNode.leftChild;
-      } else {
-        focusNode = focusNode.rightChild;
-      }
-      if (focusNode === null) {
-        return null;
-      }
-    }
-    return focusNode;
+
+    traverse(this.root);
+
+    return values;
   }
 }
 
-function loadDataTree() {
+function loadInPostOrder() {
+  const table = document.querySelector('table');
+  const rows = table.querySelectorAll('tr');
+  const data = [];
 
-  var cells = table.getElementsByTagName('td');
+  rows.forEach(row => {
+    const rowData = {};
+    const cells = row.querySelectorAll('td');
+    cells.forEach((cell, index) => {
+      rowData[`column${index + 1}`] = cell.textContent.trim();
+    });
+    data.push(rowData);
+  });
+  console.log(data);
 
-  for (var i = 0; i < cells.length; i++) {
-    // Take each cell
-    var cell = cells[i];
-    console.log(cell)
-    arr = [cells[1].innerHTML]
-    const theTree = new BinaryTree();
-    theTree.addNode(40, arr);
-    // theTree.addNode(40, cells[2].innerHTML);
-    // theTree.addNode(40, cells[3].innerHTML);
-    // theTree.addNode(40, cells[4].innerHTML);
-    // theTree.addNode(40, cells[5].innerHTML);
-    // theTree.addNode(40, cells[6].innerHTML);
+  const tree = new BinaryTree();
+  tree.insert(data[2]);
+  tree.insert(data[3]);
+  tree.insert(data[4]);
+  tree.insert(data[5]);
+  tree.insert(data[6]);
+  console.log(tree)
+  console.log(tree.preOrder()); // [5, 3, 1, 7, 9]
+  console.log(tree.postOrder()); // [1, 3, 9, 7, 5]
+  console.log(tree.inOrder()); // [1, 3, 5, 7, 9]
 
-    // Different ways to traverse binary trees
-    //theTree.inOrderTraverseTree(theTree.root);
-    //theTree.preorderTraverseTree(theTree.root);
-    //theTree.postOrderTraverseTree(theTree.root);
+  results = `Post order -- ${JSON.stringify(tree.postOrder())}`
+  document.getElementById("area-id").innerHTML = results
+};
 
-    // Find the node with key 75
-    // console.log("\nTest Node with the key 75");
-    //console.log(theTree);
+function loadInPreOrder() {
+  const table = document.querySelector('table');
+  const rows = table.querySelectorAll('tr');
+  const data = [];
 
-    var myArray = `${theTree.inOrderTraverseTree(theTree.root)}`
-    document.getElementById("area-id").innerHTML = JSON.stringify(theTree) //JSON.stringify(myArray) 
-    //console.log(theTree.root)
-  }
+  rows.forEach(row => {
+    const rowData = {};
+    const cells = row.querySelectorAll('td');
+    cells.forEach((cell, index) => {
+      rowData[`column${index + 1}`] = cell.textContent.trim();
+    });
+    data.push(rowData);
+  });
+  console.log(data);
+
+  const tree = new BinaryTree();
+  tree.insert(data[2]);
+  tree.insert(data[3]);
+  tree.insert(data[4]);
+  tree.insert(data[5]);
+  tree.insert(data[6]);
+  console.log(tree)
+  console.log(tree.preOrder()); // [5, 3, 1, 7, 9]
+  console.log(tree.postOrder()); // [1, 3, 9, 7, 5]
+  console.log(tree.inOrder()); // [1, 3, 5, 7, 9]
+
+  results = `Pre order -- ${JSON.stringify(tree.preOrder())}`
+  document.getElementById("area-id").innerHTML = results
+};
+
+function loadInOrder() {
+  const table = document.querySelector('table');
+  const rows = table.querySelectorAll('tr');
+  const data = [];
+
+  rows.forEach(row => {
+    const rowData = {};
+    const cells = row.querySelectorAll('td');
+    cells.forEach((cell, index) => {
+      rowData[`column${index + 1}`] = cell.textContent.trim();
+    });
+    data.push(rowData);
+  });
+  console.log(data);
+
+  const tree = new BinaryTree();
+  tree.insert(data[2]);
+  tree.insert(data[3]);
+  tree.insert(data[4]);
+  tree.insert(data[5]);
+  tree.insert(data[6]);
+  console.log(tree)
+  console.log(tree.preOrder()); // [5, 3, 1, 7, 9]
+  console.log(tree.postOrder()); // [1, 3, 9, 7, 5]
+  console.log(tree.inOrder()); // [1, 3, 5, 7, 9]
+
+  results = `In order -- ${JSON.stringify(tree.inOrder())}`
+  document.getElementById("area-id").innerHTML = results
 };
 
 class Node_2 {
