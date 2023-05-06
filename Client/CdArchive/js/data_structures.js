@@ -96,6 +96,39 @@ class BinaryTree {
   }
 }
 
+class HashTable {
+  constructor(size = 53) {
+    this.keyMap = new Array(size);
+  }
+
+  _hash(key) {
+    let total = 0;
+    const prime = 31;
+    for (let i = 0; i < Math.min(key.length, 100); i++) {
+      const char = key[i];
+      const value = char.charCodeAt(0) - 96;
+      total = (total * prime + value) % this.keyMap.length;
+    }
+    return total;
+  }
+
+  set(key, value) {
+    const index = this._hash(key);
+    if (!this.keyMap[index]) {
+      this.keyMap[index] = new BinaryTree();
+    }
+    this.keyMap[index].insert(value);
+  }
+
+  get(key) {
+    const index = this._hash(key);
+    if (this.keyMap[index]) {
+      return this.keyMap[index];
+    }
+    return null;
+  }
+}
+
 function loadInPostOrder() {
   const table = document.querySelector('table');
   const rows = table.querySelectorAll('tr');
@@ -184,6 +217,20 @@ function loadInOrder() {
 
   results = `In order -- ${JSON.stringify(tree.inOrder())}`
   document.getElementById("area-id").innerHTML = results
+};
+
+function displayHashTable() {
+  var text_area = document.getElementById("area-id").innerHTML
+
+  const hash_table = new HashTable()
+  const tree = new BinaryTree();
+
+  hash_table._hash(2)
+  hash_table.set(2, text_area)
+
+  console.log(JSON.stringify(hash_table))
+
+  //console.log(JSON.stringify(hash_table.get(2)))
 };
 
 class Node_2 {

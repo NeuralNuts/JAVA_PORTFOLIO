@@ -78,7 +78,7 @@
         <button class="btn btn-success mt-2">Graphical</button>
         <label for="exampleFormControlTextarea6">Hash map:</label>
         <button class="btn btn-success mt-2">Save</button>
-        <button class="btn btn-success mt-2">Display</button>
+        <button onclick="displayHashTable()" class="btn btn-success mt-2">Display</button>
         <div class="container" style="display: flexbox;">
           <form id="message-form">
             <button type="submit" class="btn btn-success mt-2">Return</button>
@@ -98,7 +98,7 @@
         <div class="mh-100 info mt-2 mb-2"
           style="width: 100%; border: solid; border-color: rgba(143, 143, 143, 0.2); border-width: 2px; border-radius: 5px; height: 200px; overflow: auto;"
           id="log-div">
-          
+
         </div>
       </div>
 
@@ -167,6 +167,19 @@
 
 <script>
   loadData();
+
+  document.addEventListener('keydown', function (event) {
+    if (event.ctrlKey && event.key === 'c') {
+      console.log('Ctrl+C detected');
+      close()
+    }
+  });
+
+  process.on('SIGINT', function () {
+    console.log('SIGINT signal received.');
+    process.exit(0);
+  });
+
 </script>
 
 </html>

@@ -351,3 +351,43 @@ console.log(tree)
 console.log(tree.preOrder()); // [5, 3, 1, 7, 9]
 console.log(tree.postOrder()); // [1, 3, 9, 7, 5]
 console.log(tree.inOrder()); // [1, 3, 5, 7, 9]
+
+class HashTable {
+    constructor(size = 53) {
+        this.keyMap = new Array(size);
+    }
+
+    _hash(key) {
+        let total = 0;
+        const prime = 31;
+        for (let i = 0; i < Math.min(key.length, 100); i++) {
+            const char = key[i];
+            const value = char.charCodeAt(0) - 96;
+            total = (total * prime + value) % this.keyMap.length;
+        }
+        return total;
+    }
+
+    set(key, value) {
+        const index = this._hash(key);
+        if (!this.keyMap[index]) {
+            this.keyMap[index] = new BinaryTree();
+        }
+        this.keyMap[index].insert(value);
+    }
+
+    get(key) {
+        const index = this._hash(key);
+        if (this.keyMap[index]) {
+            return this.keyMap[index];
+        }
+        return null;
+    }
+}
+
+const hash_table = new HashTable()
+
+hash_table._hash(2)
+hash_table.set(2, "hash")
+
+console.log(hash_table.get(2))
