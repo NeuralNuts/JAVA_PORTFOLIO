@@ -1,4 +1,4 @@
-const { app, BrowserWindow } = require('electron');
+const { app, dialog, BrowserWindow } = require('electron');
 const path = require('path');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -18,6 +18,24 @@ const createWindow = () => {
     }
   });
 
+  mainWindow.on('close', e => { 
+    e.preventDefault()
+    dialog.showMessageBox({
+      type: 'info',
+      buttons: ['Ok', 'Exit'],
+      cancelId: 1,
+      defaultId: 0,
+      title: 'Warning',
+      detail: 'Hey, wait! There\'s something you should know...'
+    }).then(({ response, checkboxChecked }) => {
+      console.log(`response: ${response}`)
+      if (response) {
+        mainWindow.destroy()
+        app.quit()
+      }
+    })
+  })
+
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, './index.html'));
 
@@ -32,12 +50,8 @@ app.on('ready', createWindow);
 
 // Quit when all windows are closed, except on macOS. There, it's common
 // for applications and their menu bar to stay active until the user quits
-// explicitly with Cmd + Q.
-app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  }
-});
+// explicitly with Cmd + Q. 
+
 
 app.on('activate', () => {
   // On OS X it's common to re-create a window in the app when the
