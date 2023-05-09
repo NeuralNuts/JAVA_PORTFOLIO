@@ -220,17 +220,40 @@ function loadInOrder() {
 };
 
 function displayHashTable() {
+  const table = document.querySelector('table');
+  const rows = table.querySelectorAll('tr');
+  const data = [];
+
+  rows.forEach(row => {
+    const rowData = {};
+    const cells = row.querySelectorAll('td');
+    cells.forEach((cell, index) => {
+      rowData[`column${index + 1}`] = cell.textContent.trim();
+    });
+    data.push(rowData);
+  });
+
+  const tree = new BinaryTree();
+  tree.insert(data[2]);
+  tree.insert(data[3]);
+  tree.insert(data[4]);
+  tree.insert(data[5]);
+  tree.insert(data[6]);
   var text_area = document.getElementById("area-id").innerHTML
 
   const hash_table = new HashTable()
-  const tree = new BinaryTree();
 
+  //console.log(tree.root)
+
+  hash_table.set(2, tree)
   hash_table._hash(2)
-  hash_table.set(2, text_area)
+  hash_table.get(2)
 
-  console.log(JSON.stringify(hash_table))
+  //hash_table.get(2)
 
-  //console.log(JSON.stringify(hash_table.get(2)))
+  //console.log(JSON.stringify(text_area))
+
+  console.log(JSON.stringify(hash_table.keyMap))
 };
 
 class Node_2 {
