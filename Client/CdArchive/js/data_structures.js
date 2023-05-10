@@ -155,7 +155,7 @@ function loadInPostOrder() {
   console.log(tree.postOrder()); // [1, 3, 9, 7, 5]
   console.log(tree.inOrder()); // [1, 3, 5, 7, 9]
 
-  results = `Post order -- ${JSON.stringify(tree.postOrder())}`
+  results = `Post order -- \n\n${JSON.stringify(tree.postOrder())}`
   document.getElementById("area-id").innerHTML = results
 };
 
@@ -185,7 +185,7 @@ function loadInPreOrder() {
   console.log(tree.postOrder()); // [1, 3, 9, 7, 5]
   console.log(tree.inOrder()); // [1, 3, 5, 7, 9]
 
-  results = `Pre order -- ${JSON.stringify(tree.preOrder())}`
+  results = `Pre order --> \n\n${JSON.stringify(tree.preOrder())}`
   document.getElementById("area-id").innerHTML = results
 };
 
@@ -215,7 +215,7 @@ function loadInOrder() {
   console.log(tree.postOrder()); // [1, 3, 9, 7, 5]
   console.log(tree.inOrder()); // [1, 3, 5, 7, 9]
 
-  results = `In order -- ${JSON.stringify(tree.inOrder())}`
+  results = `In order --> \n\n${JSON.stringify(tree.inOrder())}`
   document.getElementById("area-id").innerHTML = results
 };
 
@@ -239,7 +239,7 @@ function displayHashTable() {
   tree.insert(data[4]);
   tree.insert(data[5]);
   tree.insert(data[6]);
-  var text_area = document.getElementById("area-id").innerHTML
+  var text_area = document.getElementById("area-id")
 
   const hash_table = new HashTable()
 
@@ -253,7 +253,7 @@ function displayHashTable() {
 
   //console.log(JSON.stringify(text_area))
 
-  console.log(JSON.stringify(hash_table.keyMap))
+  text_area.innerText = JSON.stringify(hash_table)
 };
 
 class Node_2 {

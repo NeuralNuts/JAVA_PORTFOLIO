@@ -79,20 +79,6 @@
         <label for="exampleFormControlTextarea6">Hash map:</label>
         <button class="btn btn-success mt-2">Save</button>
         <button onclick="displayHashTable()" class="btn btn-success mt-2">Display</button>
-        <div class="container" style="display: flexbox;">
-          <form id="message-form">
-            <button type="submit" class="btn btn-success mt-2">Return</button>
-          </form>
-          <form id="message-form2">
-            <button type="submit" class="btn btn-success mt-2">Retrieve</button>
-          </form>
-          <form id="message-form3">
-            <button class="btn btn-success mt-2">Remove</button>
-          </form>
-          <form id="message-form4">
-            <button class="btn btn-success mt-2">Add</button>
-          </form>
-        </div>
 
         <label for="exampleFormControlTextarea6">Process Log:</label>
         <div class="mh-100 info mt-2 mb-2"
@@ -155,10 +141,25 @@
         <textarea class="form-control z-depth-1 mt-2" id="description-input" rows="3"
           placeholder="Waiting..."></textarea>
 
-        <button class="btn btn-success mb-2 mt-2" onclick="addItemToTable()">Add</button>
-        <button class="btn btn-success mb-2 mt-2" onclick="updateItemInTable()">Update</button>
-        <button class="btn btn-success mb-2 mt-2" onclick="deleteItemInTable()">Delete</button>
-        <button class="btn btn-success mb-2 mt-2" onclick="window.location.href='#top'">Back To Table</button>
+        <div class="container" style="display: inline-flex;">
+          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="addItemToTable()">Add</button>
+          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="updateItemInTable()">Update</button>
+          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="deleteItemInTable()">Delete</button>
+          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="window.location.href='#top'">Back To Table</button>
+
+          <form id="message-form">
+            <button type="submit" class="btn btn-success mt-2" style="margin-left: 10px;">Return</button>
+          </form>
+          <form id="message-form2">
+            <button type="submit" class="btn btn-success mt-2" style="margin-left: 10px;">Retrieve</button>
+          </form>
+          <form id="message-form3">
+            <button class="btn btn-success mt-2" style="margin-left: 10px;">Remove</button>
+          </form>
+          <form id="message-form4">
+            <button class="btn btn-success mt-2" style="margin-left: 10px;">Add</button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
