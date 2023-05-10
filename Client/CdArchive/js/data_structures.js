@@ -138,7 +138,7 @@ function loadInPostOrder() {
     const rowData = {};
     const cells = row.querySelectorAll('td');
     cells.forEach((cell, index) => {
-      rowData[`column${index + 1}`] = cell.textContent.trim();
+      rowData[index + 1] = cell.textContent.trim();
     });
     data.push(rowData);
   });
@@ -168,7 +168,7 @@ function loadInPreOrder() {
     const rowData = {};
     const cells = row.querySelectorAll('td');
     cells.forEach((cell, index) => {
-      rowData[`column${index + 1}`] = cell.textContent.trim();
+      rowData[index + 1] = cell.textContent.trim();
     });
     data.push(rowData);
   });
@@ -198,7 +198,7 @@ function loadInOrder() {
     const rowData = {};
     const cells = row.querySelectorAll('td');
     cells.forEach((cell, index) => {
-      rowData[`column${index + 1}`] = cell.textContent.trim();
+      rowData[index ++] = cell.textContent.trim();
     });
     data.push(rowData);
   });
