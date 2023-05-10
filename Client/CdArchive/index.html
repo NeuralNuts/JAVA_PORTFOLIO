@@ -77,9 +77,9 @@
         <button onclick="loadInOrder()" class="btn btn-success mt-2">In-Order</button>
         <button onclick="loadInPostOrder()" class="btn btn-success mt-2">Post-Order</button>
         <button class="btn btn-success mt-2">Graphical</button>
-        
+
         <label for="exampleFormControlTextarea6">Hash map:</label>
-        <button class="btn btn-success mt-2">Save</button>
+        <button class="btn btn-success mt-2" id="save-btn">Save</button>
         <button onclick="displayHashTable()" class="btn btn-success mt-2">Display</button>
 
         <label for="exampleFormControlTextarea6">Process Log:</label>
@@ -145,9 +145,12 @@
 
         <div class="container" style="display: inline-flex;">
           <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="addItemToTable()">Add</button>
-          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="updateItemInTable()">Update</button>
-          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="deleteItemInTable()">Delete</button>
-          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;" onclick="window.location.href='#top'">Back To Table</button>
+          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;"
+            onclick="updateItemInTable()">Update</button>
+          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;"
+            onclick="deleteItemInTable()">Delete</button>
+          <button class="btn btn-success mb-2 mt-2" style="margin-left: 10px;"
+            onclick="window.location.href='#top'">Back To Table</button>
 
           <form id="message-form">
             <button type="submit" class="btn btn-success mt-2" style="margin-left: 10px;">Return</button>
@@ -183,6 +186,25 @@
     process.exit(0);
   });
 
-</script>
+  let textEle = document.getElementById("area-id");
+  let fileNameEle = "HashTable";
+  let saveBtn = document.getElementById("save-btn");
 
+  saveBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const textData = textEle.value;
+    const textDataBlob = new Blob([textEle.value], { type: "text/plain" });
+
+    const downloadUrl = window.URL.createObjectURL(textDataBlob)
+
+    const downloadLink = document.createElement('a');
+    downloadLink.download = fileNameEle.value
+    downloadLink.href = downloadUrl;
+    downloadLink.click()
+
+    console.log(textData);
+    console.log(textDataBlob);
+  });
+</script>
 </html>

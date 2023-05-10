@@ -247,13 +247,13 @@ function displayHashTable() {
 
   hash_table.set(2, tree)
   hash_table._hash(2)
-  hash_table.get(2)
+  //hash_table.get(2)
 
   //hash_table.get(2)
 
   //console.log(JSON.stringify(text_area))
 
-  text_area.innerText = JSON.stringify(hash_table)
+  text_area.innerText = JSON.stringify(hash_table.get(2))
 };
 
 class Node_2 {
