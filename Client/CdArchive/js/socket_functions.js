@@ -8,6 +8,10 @@ var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds(
 var dateTime = date + time;
 
 // Listen for incoming messages from the server
+/**
+ * Sockets
+ * @function
+ */
 socket.on('message', (section_data) => {
     var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
     var chatLog = document.getElementById('log-div');
@@ -44,6 +48,10 @@ socket.on('message', (section_data) => {
     });
 });
 
+/**
+ * Getting socket messages
+ * @function
+ */
 socket.on('message_remove', (remove_data) => {
     var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
     var chatLog = document.getElementById('log-div');
@@ -60,6 +68,10 @@ socket.on('message_remove', (remove_data) => {
 
 });
 
+/**
+ * Gets sockets emits on window load
+ * @function
+ */
 window.addEventListener('load', () => {
     const form = document.getElementById('message-form');
     const form2 = document.getElementById('message-form2');

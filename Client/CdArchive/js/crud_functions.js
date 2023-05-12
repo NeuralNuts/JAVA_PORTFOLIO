@@ -6,6 +6,10 @@ const db = new sqlite3.Database("./archive.db", sqlite3.OPEN_READWRITE, (err) =>
     if (err) return console.error(err.message);
 });
 
+/**
+ * Deletes items within the html table
+ * @function
+ */
 function deleteItemInTable() {
     var id_input = document.getElementById("id-input").value;
 
@@ -18,6 +22,10 @@ function deleteItemInTable() {
         })
 }
 
+/**
+ * Loads data from the SQLite database and displays it within the html data
+ * @function
+ */
 function loadData() {
     get_data = `SELECT * FROM archive`;
 
@@ -46,6 +54,10 @@ function loadData() {
     )
 };
 
+/**
+ * When a row within the html tabel is clicked the data from that row will be sent to the input fields below for modifications
+ * @function
+*/
 function highlight_row() {
     var id_input = $("#id-input");
     var title_input = $("#title-input");
@@ -85,6 +97,10 @@ function highlight_row() {
     }
 }
 
+/**
+ * Adds a new entry to the database
+ * @function
+ */
 function addItemToTable() {
     var title_input = document.getElementById("title-input").value;
     var author_input = document.getElementById("author-input").value;
@@ -103,6 +119,10 @@ function addItemToTable() {
         })
 }
 
+/**
+ * Updates entry that is displayed in the input fields
+ * @function
+ */
 function updateItemInTable() {
     var id_input = document.getElementById("id-input").value;
     var title_input = document.getElementById("title-input").value;
@@ -123,6 +143,10 @@ function updateItemInTable() {
         })
 }
 
+/**
+ * Searches through table based on the input field and then only displays the result in the table
+ * @function
+ */
 function searchTable() {
     var input, filter, table, tr, td, i, txtValue;
     input = document.getElementById("search-input");

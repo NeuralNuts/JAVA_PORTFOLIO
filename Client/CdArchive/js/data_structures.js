@@ -1,3 +1,7 @@
+/**
+ * Node class for the doubly linked list 
+ * @class
+ */
 class DoublyLinkedListNode {
   constructor(value) {
     this.value = value;
@@ -6,6 +10,10 @@ class DoublyLinkedListNode {
   }
 }
 
+/**
+ * Doubly linked list for the proccess log
+ * @class
+ */
 class DoublyLinkedList {
   constructor(value) {
     this.head = {
@@ -17,6 +25,11 @@ class DoublyLinkedList {
     this.tail = this.head;
   }
 
+  /**
+   * Prints out the doubly linked list 
+   * @function
+   * @returns this
+   */
   printList() {
     let array = [];
     let currentList = this.head;
@@ -29,6 +42,11 @@ class DoublyLinkedList {
     return this;
   }
 
+  /**
+   * Appends a value from the list 
+   * @function
+   * @param {*} value 
+   */
   append(value) {
     let newNode = new DoublyLinkedListNode(value);
 
@@ -41,6 +59,11 @@ class DoublyLinkedList {
     this.printList();
   }
 
+  /**
+   * Prepends (end) a value to the list
+   * @function
+   * @param {*} value 
+   */
   prepend(value) {
     let newNode = new DoublyLinkedListNode(value);
 
@@ -52,6 +75,13 @@ class DoublyLinkedList {
     this.printList();
   }
 
+  /**
+   * Inserts a value into the list
+   * @function
+   * @param {*} index 
+   * @param {*} value 
+   * @returns this
+   */
   insert(index, value) {
     if (!Number.isInteger(index) || index < 0 || index > this.length + 1) {
       console.log(`Invalid index. Current length is ${this.length}.`);
@@ -86,6 +116,12 @@ class DoublyLinkedList {
     this.printList();
   }
 
+  /**
+   * Removes a value from the list
+   * @function
+   * @param {*} index 
+   * @returns this 
+   */
   remove(index) {
     if (!Number.isInteger(index) || index < 0 || index > this.length) {
       console.log(`Invalid index. Current length is ${this.length}.`);
@@ -127,6 +163,10 @@ class DoublyLinkedList {
   }
 }
 
+/**
+ * Node for the binary tree
+ * @class
+ */
 class BinaryTreeNode {
   constructor(value) {
     this.value = value;
@@ -135,11 +175,20 @@ class BinaryTreeNode {
   }
 }
 
+/**
+ * Binary tree
+ * @class
+ */
 class BinaryTree {
   constructor() {
     this.root = null;
   }
 
+  /**
+   * Inserta a new value into the binary tree
+   * @param {*} value 
+   * @returns this 
+   */
   insert(value) {
     const newNode = new BinaryTreeNode(value);
 
@@ -165,6 +214,11 @@ class BinaryTree {
     }
   }
 
+  /**
+   * Loads the binary tree in pre-order 
+   * @function
+   * @returns values
+   */
   preOrder() {
     const values = [];
 
@@ -179,6 +233,11 @@ class BinaryTree {
     return values;
   }
 
+  /**
+   * Loads the binary tree in post-order
+   * @function
+   * @returns values
+   */
   postOrder() {
     const values = [];
 
@@ -193,6 +252,11 @@ class BinaryTree {
     return values;
   }
 
+  /**
+   * Loads the binary tree in "in-order"
+   * @function
+   * @returns values
+   */
   inOrder() {
     const values = [];
 
@@ -209,11 +273,21 @@ class BinaryTree {
   }
 }
 
+/**
+ * Hash table 
+ * @class
+ */
 class HashTable {
   constructor(size = 53) {
     this.keyMap = new Array(size);
   }
 
+  /**
+   * Hashes the based on the key
+   * @function
+   * @param {*} key 
+   * @returns total
+   */
   _hash(key) {
     let total = 0;
     const prime = 31;
@@ -225,6 +299,12 @@ class HashTable {
     return total;
   }
 
+  /**
+   * Sets the key to a given value 
+   * @function
+   * @param {*} key 
+   * @param {*} value 
+   */
   set(key, value) {
     const index = this._hash(key);
     if (!this.keyMap[index]) {
@@ -233,6 +313,12 @@ class HashTable {
     this.keyMap[index].insert(value);
   }
 
+  /**
+   * Gets the hashed vales based on the given key
+   * @function
+   * @param {*} key 
+   * @returns {null}
+   */
   get(key) {
     const index = this._hash(key);
     if (this.keyMap[index]) {
@@ -242,6 +328,11 @@ class HashTable {
   }
 }
 
+/**
+ * Loads the table data into the binary tree
+ * @function
+ * @returns {tree}
+ */
 function BinaryTreeLoad(){
   const table = document.querySelector('table');
   const rows = table.querySelectorAll('tr');
@@ -266,6 +357,10 @@ function BinaryTreeLoad(){
   return tree;
 }
 
+/**
+ * Loads the binary tree with the table data and displays it in the text area in post-order
+ * @function
+ */
 function loadInPostOrder() {
   var tree = BinaryTreeLoad()
 
@@ -273,6 +368,10 @@ function loadInPostOrder() {
   document.getElementById("area-id").innerHTML = results
 };
 
+/**
+ * Loads the binary tree with the table data and displays it in the text area in pre-order
+ * @function
+ */
 function loadInPreOrder() {
   var tree = BinaryTreeLoad()
 
@@ -280,6 +379,10 @@ function loadInPreOrder() {
   document.getElementById("area-id").innerHTML = results
 };
 
+/**
+ * Loads the binary tree with the table data and displays it in the text area in "in-order"
+ * @function
+ */
 function loadInOrder() {
   var tree = BinaryTreeLoad()
 
@@ -287,6 +390,10 @@ function loadInOrder() {
   document.getElementById("area-id").innerHTML = results
 };
 
+/**
+ * Displays the hash table in the text area
+ * @function
+ */
 function displayHashTable() {
   var tree = BinaryTreeLoad()
   var text_area = document.getElementById("area-id")
