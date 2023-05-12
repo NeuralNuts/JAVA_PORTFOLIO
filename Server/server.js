@@ -47,6 +47,13 @@ sockio.on('connection', (socket) => {
         // Broadcast the message to all connected clients
         sockio.emit('table', data);
     });
+
+    socket.on('message_remove', (data) => {
+        console.log(`Received message: ${data}`);
+
+        // Broadcast the message to all connected clients
+        sockio.emit('message_remove', data);
+    });
 });
 
 // Start the server

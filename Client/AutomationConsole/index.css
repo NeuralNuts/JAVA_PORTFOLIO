@@ -72,11 +72,6 @@ td:hover {
   cursor: pointer;
 }
 
-.add-item-button {
-  display: none;
-  /* background-color: #3a3a3a; */
-}
-
 .secret-input {
   color: #111111;
   background-color: #111111;

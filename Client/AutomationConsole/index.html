@@ -17,15 +17,17 @@
     <h2>Process:</h2>
     <div class="input-group mb-2 mt-3">
       <select id="select-process" class="form-select">
-        <option>Add</option>
-        <option>Remove</option>
-        <option>Retrieve</option>
-        <option>Sort</option>
-        <option>Return</option>
+        <option value="Add">Add</option>
+        <option value="Remove">Remove</option>
+        <option value="Retrieve">Retrieve</option>
+        <option value="Sort">Sort</option>
+        <option value="Return">Return</option>
       </select>
 
       <div class="input-group-append">
-        <button onclick="DisplayAddItemButton()" class="btn btn-success">Process</button>
+        <form id="message-form-process">
+          <button type="submit" class="btn btn-success">Process</button>
+        </form>
       </div>
     </div>
 

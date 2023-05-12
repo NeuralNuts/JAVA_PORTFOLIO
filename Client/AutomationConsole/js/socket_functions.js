@@ -8,6 +8,8 @@ socket.on('message', (data) => {
 
 window.addEventListener('load', () => {
     const form = document.getElementById('message-form');
+    const process = document.getElementById("message-form-process") 
+
     form.addEventListener('submit', (event) => {
         event.preventDefault();
 
@@ -48,6 +50,33 @@ window.addEventListener('load', () => {
 
         socket.emit('message_y', message_y);
         yInput.value = '';
+    });
+
+    process.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        var barCodeInput = document.getElementById("bar-code-input").value
+        var sectionInput = document.getElementById("section-input").value
+        var selectMenu = document.getElementById("select-process").value
+        var result
+
+        if(selectMenu === "Remove"){
+            result = `REMOVE-FROM-ROBOT | Barcode: ${barCodeInput} | Section: ${sectionInput}`
+        }
+        else if(selectMenu === "Add"){
+            result = `ADD-FROM-ROBOT | Barcode: ${barCodeInput} | Section: ${sectionInput}`
+        }
+        if(selectMenu === "Return"){
+            result = `RETRUN-FROM-ROBOT | Barcode: ${barCodeInput} | Section: ${sectionInput}`
+        }
+        else if(selectMenu === "Retrieve"){
+            result = `RETRIEVE-FROM-ROBOT | Barcode: ${barCodeInput} | Section: ${sectionInput}`
+        }
+        if(selectMenu === "Sort"){ 
+            result = `SORT-FROM-ROBOT | Barcode: ${barCodeInput} | Section: ${sectionInput}`
+        }
+
+        socket.emit('message_remove', result);
     });
 })
 

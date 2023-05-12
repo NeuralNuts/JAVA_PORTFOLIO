@@ -62,14 +62,3 @@ function loadData() {
     }
     )
 };
-
-function DisplayAddItemButton() { 
-    var processSelect = document.getElementById("select-process")
-
-    if (processSelect.options[processSelect.selectedIndex].text === "Add") {
-        $("#add-item").show();
-    }
-    else {
-        $("#add-item").hide();
-    }
-}

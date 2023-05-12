@@ -294,5 +294,7 @@ function displayHashTable() {
 
   hash_table.set(2, tree)
   hash_table._hash(2)
-  text_area.innerText = JSON.stringify(hash_table.get(2))
+
+  results = `Hash Table --> \n\n${JSON.stringify(hash_table.get(2))}`
+  text_area.innerText = results
 };

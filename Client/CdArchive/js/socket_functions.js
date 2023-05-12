@@ -11,7 +11,7 @@ var dateTime = date + time;
 socket.on('message', (section_data) => {
     var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
     var chatLog = document.getElementById('log-div');
-    
+
     chatLog.innerHTML = newMessage
 
     let sectionInput = document.getElementById('pro-log-input')
@@ -42,6 +42,22 @@ socket.on('message', (section_data) => {
             });
         });
     });
+});
+
+socket.on('message_remove', (remove_data) => {
+    var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
+    var chatLog = document.getElementById('log-div');
+
+    chatLog.innerHTML = newMessage
+
+    let sectionInput = document.getElementById('pro-log-input')
+
+    sectionInput.value = remove_data;
+    results = `Date/Time: ${dateTime} | ${remove_data}`
+    myDoublyList = new DoublyLinkedList(results);
+    sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+    chatLog.appendChild(sectionInput);
+
 });
 
 window.addEventListener('load', () => {
@@ -89,7 +105,7 @@ window.addEventListener('load', () => {
         myDoublyList = new DoublyLinkedList(results);
         logInput.value = JSON.stringify(myDoublyList.printList().head.value)
         chatLog_1.appendChild(logInput);
-        
+
         socket.emit('table', message);
     });
     form3.addEventListener('submit', (event) => {
