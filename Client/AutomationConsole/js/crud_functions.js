@@ -1,6 +1,4 @@
 const sqlite3 = require('sqlite3').verbose();
-
-let insert_data;
 let get_data;
 
 const db = new sqlite3.Database("./archive.db", sqlite3.OPEN_READWRITE, (err) => {
@@ -9,21 +7,16 @@ const db = new sqlite3.Database("./archive.db", sqlite3.OPEN_READWRITE, (err) =>
 });
 
 function highlight_row() {
-
     var section_input = $("#section-input");
     var bar_code_input = $("#bar-code-input");
     var y_input = $("#y-input");
     var x_input = $("#x-input");
-
     var table = document.getElementById('true-table');
     var cells = table.getElementsByTagName('td');
 
     for (var i = 0; i < cells.length; i++) {
-        // Take each cell
         var cell = cells[i];
-        // do something on onclick event for cell
         cell.onclick = function () {
-            // Get the row id where the cell exists
             var rowId = this.parentNode.rowIndex;
             var rowsNotSelected = table.getElementsByTagName('tr');
 
@@ -32,7 +25,6 @@ function highlight_row() {
                 rowsNotSelected[row].style.backgroundColor = "";
                 rowsNotSelected[row].classList.backgroundColor = "";
             }
-
             var rowSelected = table.getElementsByTagName('tr')[rowId];
 
             section_input.val(rowSelected.cells[2].innerHTML)
@@ -44,20 +36,15 @@ function highlight_row() {
 }
 
 function loadData() {
-
     get_data = `SELECT * FROM archive`;
 
     db.all(get_data, [], (err, rows) => {
-
         table = document.getElementById("my-table");
         let tr = table.insertRow();
 
         if (err) return console.error(err.message);
 
         for (let row of rows) {
-
-            console.log(row)
-
             const tr = document.createElement('tr');
             const content = 
          `<td>${row.title}</td>
@@ -71,19 +58,15 @@ function loadData() {
             tr.innerHTML = content;
             table.appendChild(tr)
         }
-
         highlight_row()
     }
     )
 };
 
-function DisplayAddItemButton() {
-
+function DisplayAddItemButton() { 
     var processSelect = document.getElementById("select-process")
 
     if (processSelect.options[processSelect.selectedIndex].text === "Add") {
-
-        console.log("Yes")
         $("#add-item").show();
     }
     else {

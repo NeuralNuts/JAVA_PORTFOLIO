@@ -5,6 +5,7 @@ const httpServer = createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': 'text/html' });
     res.end('Hello, world!');
 });
+
 const sockio = new Server(httpServer, {
     cors: {
         origin: "http://localhost:8080"
