@@ -6,7 +6,7 @@ var today = new Date();
 var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 var dateTime = date + time;
-
+var resultsArray = [];
 // Listen for incoming messages from the server
 /**
  * Sockets
@@ -42,24 +42,22 @@ socket.on('message', (section_data) => {
 
                 yInput.value = y_data
                 results = `Date/Time: ${dateTime} | ${section_data} | ${barcode_data} | ${x_data} | ${y_data} | ADD-FROM-ROBOT`
-                myDoublyList = new DoublyLinkedList(results);
-                myDoublyList.append(results)
+                myDoublyList = new DoublyLinkedList();
+                resultsArray = results
                 //myDoublyList.prepend(1)
                 //myDoublyList.insert(2, 33)
                 sectionInput.value = results//= JSON.stringify(myDoublyList.printList().head.value)
-                chatLog.appendChild(sectionInput);
+                //chatLog.appendChild(sectionInput);
                 console.log(myDoublyList.printList())
+                console.log(resultsArray)
+                chatLog.appendChild(sectionInput);
+                myDoublyList.append(resultsArray)
             });
         });
     });
 });
 
-function showDoublyLinkedList(){
-    var text_area = document.getElementById("area-id")
-    let sectionInput = document.getElementById('pro-log-input')
-    var myDoublyList = new DoublyLinkedList(sectionInput.value)
-    text_area.innerText = JSON.stringify(myDoublyList.printList())
-}
+
 
 /**
  * Getting socket messages
@@ -76,7 +74,8 @@ socket.on('message_remove', (remove_data) => {
     sectionInput.value = remove_data;
     results = `Date/Time: ${dateTime} | ${remove_data}`
     myDoublyList = new DoublyLinkedList();
-    myDoublyList.append(results)
+    resultsArray = results
+    myDoublyList.append(resultsArray)
     // sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
     chatLog.appendChild(sectionInput);
 
@@ -107,9 +106,9 @@ window.addEventListener('load', () => {
         let logInput = document.getElementById('pro-log-input')
 
         results = `Date/Time: ${dateTime} | Section: ${sectionInput} | Barcode: ${barCodeInput} | RETURN-SORTED-CD-ARCHIVE-TABLE-TO-ROBOT`
-        myDoublyList = new DoublyLinkedList(results);
-        myDoublyList.insert(1, results)
-        logInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        myDoublyList = new DoublyLinkedList();
+        myDoublyList.prepend(results)
+        logInput.value = results
         chatLog_1.appendChild(logInput);
 
         socket.emit('table', message);
@@ -129,8 +128,9 @@ window.addEventListener('load', () => {
         let logInput = document.getElementById('pro-log-input')
 
         results = `Date/Time: ${dateTime} | Section: ${sectionInput} | Barcode: ${barCodeInput} | RETRIEVE-CD-FROM-ROBOT`
-        myDoublyList = new DoublyLinkedList(results);
-        logInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        myDoublyList = new DoublyLinkedList();
+        myDoublyList.prepend(results)
+        logInput.value = results
         chatLog_1.appendChild(logInput);
 
         socket.emit('table', message);
@@ -150,8 +150,9 @@ window.addEventListener('load', () => {
         let logInput = document.getElementById('pro-log-input')
 
         results = `Date/Time: ${dateTime} | Section: ${sectionInput} | Barcode: ${barCodeInput} | REMOVE-CD-FROM-ROBOT`
-        myDoublyList = new DoublyLinkedList(results);
-        logInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        myDoublyList = new DoublyLinkedList();
+        myDoublyList.append(results)
+        logInput.value = results
         chatLog_1.appendChild(logInput);
 
         socket.emit('table', message);
@@ -171,10 +172,18 @@ window.addEventListener('load', () => {
         let logInput = document.getElementById('pro-log-input')
 
         results = `Date/Time: ${dateTime} | Section: ${sectionInput} | Barcode: ${barCodeInput} | ADD-CD-TO-ROBOT`
-        myDoublyList = new DoublyLinkedList(results);
-        logInput.value = JSON.stringify(myDoublyList.printList().head.value)
+        myDoublyList = new DoublyLinkedList();
+        myDoublyList.prepend(results)
+        logInput.value = results
         logInput = chatLog_1;
 
         socket.emit('table', message);
     });
 })
+
+function showDoublyLinkedList(){
+    var text_area = document.getElementById("area-id")
+    let sectionInput = document.getElementById('pro-log-input')
+    var myDoublyList = new DoublyLinkedList(resultsArray)
+    text_area.innerText = JSON.stringify(myDoublyList.printList())
+}
