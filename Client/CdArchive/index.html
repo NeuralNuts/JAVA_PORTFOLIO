@@ -35,7 +35,7 @@
         <div class="input-group-append">
           <button onclick="bubbleSort()" class="btn btn-success">Bubble Sort</button>
           <button onclick="selectionSort()" class="btn btn-success">Selection Sort</button>
-          <button onclick="insertionSort()" class="btn btn-success">Insertion Sort</button>
+          <button onclick="insertionSort('my-table', 3)" class="btn btn-success">Insertion Sort</button>
           <button onclick="window.location.reload()" class="btn btn-success">Refresh Table</button>
         </div>
       </div>
@@ -195,10 +195,9 @@
 
     const textData = textEle.value;
     const textDataBlob = new Blob([textEle.value], { type: "text/plain" });
-
     const downloadUrl = window.URL.createObjectURL(textDataBlob)
-
     const downloadLink = document.createElement('a');
+
     downloadLink.download = fileNameEle.value
     downloadLink.href = downloadUrl;
     downloadLink.click()

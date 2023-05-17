@@ -1,3 +1,5 @@
+//This has nothing to do with the program was just for testing!
+
 class Node {
     constructor(value) {
         this.value = value;
