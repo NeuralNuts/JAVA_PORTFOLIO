@@ -13,9 +13,11 @@ var dateTime = date + time;
  * @function
  */
 socket.on('message', (section_data) => {
+    var createInput = document.createElement('input')
     var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
     var chatLog = document.getElementById('log-div');
 
+    newMessage
     chatLog.innerHTML = newMessage
 
     let sectionInput = document.getElementById('pro-log-input')
@@ -41,12 +43,23 @@ socket.on('message', (section_data) => {
                 yInput.value = y_data
                 results = `Date/Time: ${dateTime} | ${section_data} | ${barcode_data} | ${x_data} | ${y_data} | ADD-FROM-ROBOT`
                 myDoublyList = new DoublyLinkedList(results);
-                sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+                myDoublyList.append(results)
+                //myDoublyList.prepend(1)
+                //myDoublyList.insert(2, 33)
+                sectionInput.value = results//= JSON.stringify(myDoublyList.printList().head.value)
                 chatLog.appendChild(sectionInput);
+                console.log(myDoublyList.printList())
             });
         });
     });
 });
+
+function showDoublyLinkedList(){
+    var text_area = document.getElementById("area-id")
+    let sectionInput = document.getElementById('pro-log-input')
+    var myDoublyList = new DoublyLinkedList(sectionInput.value)
+    text_area.innerText = JSON.stringify(myDoublyList.printList())
+}
 
 /**
  * Getting socket messages
@@ -62,8 +75,9 @@ socket.on('message_remove', (remove_data) => {
 
     sectionInput.value = remove_data;
     results = `Date/Time: ${dateTime} | ${remove_data}`
-    myDoublyList = new DoublyLinkedList(results);
-    sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
+    myDoublyList = new DoublyLinkedList();
+    myDoublyList.append(results)
+    // sectionInput.value = JSON.stringify(myDoublyList.printList().head.value)
     chatLog.appendChild(sectionInput);
 
 });
@@ -94,6 +108,7 @@ window.addEventListener('load', () => {
 
         results = `Date/Time: ${dateTime} | Section: ${sectionInput} | Barcode: ${barCodeInput} | RETURN-SORTED-CD-ARCHIVE-TABLE-TO-ROBOT`
         myDoublyList = new DoublyLinkedList(results);
+        myDoublyList.insert(1, results)
         logInput.value = JSON.stringify(myDoublyList.printList().head.value)
         chatLog_1.appendChild(logInput);
 
@@ -158,7 +173,7 @@ window.addEventListener('load', () => {
         results = `Date/Time: ${dateTime} | Section: ${sectionInput} | Barcode: ${barCodeInput} | ADD-CD-TO-ROBOT`
         myDoublyList = new DoublyLinkedList(results);
         logInput.value = JSON.stringify(myDoublyList.printList().head.value)
-        chatLog_1.appendChild(logInput);
+        logInput = chatLog_1;
 
         socket.emit('table', message);
     });
