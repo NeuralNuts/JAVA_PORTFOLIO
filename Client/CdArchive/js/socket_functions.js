@@ -17,8 +17,7 @@ socket.on('message', (section_data) => {
     var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
     var chatLog = document.getElementById('log-div');
 
-    newMessage
-    chatLog.innerHTML = newMessage
+    //chatLog.innerHTML = createInput
 
     let sectionInput = document.getElementById('pro-log-input')
 
@@ -31,7 +30,7 @@ socket.on('message', (section_data) => {
         socket.on('message_x', (x_data) => {
             var chatLog = document.getElementById('log-div');
             var newMessage = document.createElement('input');
-            var xInput = document.getElementById("x-input")
+            var xInput = document.getElementById("x-input");
 
             newMessage.value = x_data;
             xInput.value = x_data
