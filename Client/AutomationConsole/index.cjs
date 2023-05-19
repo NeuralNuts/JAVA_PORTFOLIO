@@ -28,6 +28,15 @@ if (require('electron-squirrel-startup')) {
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+/*
+ * main.cjs - This is the 2nd of two programs - Automation Console
+ *          - Socket functions
+ *          - Sorting Algorthims
+ *
+ * written by:  Zakk Wilson-Christain
+ *              19/05/23
+ */
+
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({

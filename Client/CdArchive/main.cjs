@@ -24,6 +24,7 @@
  * main.cjs - This is the 1st of two programs - CD Archive
  *          - CRUD features
  *          - Sorting Algorthims
+ *          - Socket funcitons 
  *          - Data structures
  *
  * written by:  Zakk Wilson-Christain
