@@ -83,6 +83,17 @@ class DoublyLinkedList {
    * @returns this
    */
   insert(index, value) {
+    // switch (!Number.isInteger(index) || index < 0 || index > this.length + 1){
+      
+    //   case index === 0:
+    //     this.prepend(value);
+    //     return this;
+      
+    //   case index === this.length:
+    //     this.append(value);
+    //     return this;  
+    // }
+
     if (!Number.isInteger(index) || index < 0 || index > this.length + 1) {
       console.log(`Invalid index. Current length is ${this.length}.`);
       return this;

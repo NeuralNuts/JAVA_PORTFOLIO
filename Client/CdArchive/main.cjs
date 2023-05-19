@@ -20,6 +20,16 @@
 // OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 // WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+/*
+ * main.cjs - This is the 1st of two programs - CD Archive
+ *          - CRUD features
+ *          - Sorting Algorthims
+ *          - Data structures
+ *
+ * written by:  Zakk Wilson-Christain
+ *              19/05/23
+ */
+
 const { app, dialog, BrowserWindow } = require('electron');
 const path = require('path');
 
@@ -40,7 +50,7 @@ const createWindow = () => {
     }
   });
 
-  mainWindow.on('close', e => { 
+  mainWindow.on('close', e => {
     e.preventDefault()
     dialog.showMessageBox({
       type: 'info',

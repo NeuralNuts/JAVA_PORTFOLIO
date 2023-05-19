@@ -72,24 +72,6 @@ function insertionSort() {
     }
   }
 }
-// function insertionSort() {
-//   var table, rows, i, j, minIndex, shouldSwitch;
-
-//   table = document.getElementById("my-table");
-//   rows = table.rows;
-
-//   for (var i = 1; i < rows.length; i++) {
-//     var currentRow = rows[i];
-//     var currentValue = currentRow.getElementsByTagName('td')[0].textContent.toLowerCase();
-//     var j = i - 1;
-
-//     while (j >= 0 && rows[j].getElementsByTagName('td')[0] > currentValue) {
-//       table.rows[j + 1].replaceWith(table.rows[j]);
-//       j--;
-//     }
-//     table.rows[j + 1].replaceWith(currentRow);
-//   }
-// }
 
 function sortTableBy(n) {
   var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
