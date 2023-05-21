@@ -109,8 +109,9 @@ window.addEventListener('load', () => {
         myDoublyList.prepend(results)
         logInput.value = results
         chatLog_1.appendChild(logInput);
+        results_2 = [sectionInput, barCodeInput]
 
-        socket.emit('table', message);
+        socket.emit('table', results_2);
     });
     form2.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -131,8 +132,9 @@ window.addEventListener('load', () => {
         myDoublyList.prepend(results)
         logInput.value = results
         chatLog_1.appendChild(logInput);
+        results_2 = [sectionInput, barCodeInput]
 
-        socket.emit('table', message);
+        socket.emit('table', results_2);
     });
     form3.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -153,12 +155,13 @@ window.addEventListener('load', () => {
         myDoublyList.append(results)
         logInput.value = results
         chatLog_1.appendChild(logInput);
+        results_2 = [sectionInput, barCodeInput]
 
-        socket.emit('table', message);
+        socket.emit('table', results_2);
     });
     form4.addEventListener('submit', (event) => {
         event.preventDefault();
-        message = "sort"
+        message = "add"
 
         var newMessage = `<input style="width: 100%;" id="pro-log-input"/>`;
         var chatLog_1 = document.getElementById('log-div');
@@ -170,13 +173,15 @@ window.addEventListener('load', () => {
 
         let logInput = document.getElementById('pro-log-input')
 
+        
         results = `Date/Time: ${dateTime} | Section: ${sectionInput} | Barcode: ${barCodeInput} | ADD-CD-TO-ROBOT`
         myDoublyList = new DoublyLinkedList();
         myDoublyList.prepend(results)
         logInput.value = results
         logInput = chatLog_1;
+        results_2 = [sectionInput, barCodeInput]
 
-        socket.emit('table', message);
+        socket.emit('table', results_2);
     });
 })
 

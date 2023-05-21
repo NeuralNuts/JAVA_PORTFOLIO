@@ -1,11 +1,3 @@
-const { app, BrowserWindow } = require('electron');
-const path = require('path');
-
-// Handle creating/removing shortcuts on Windows when installing/uninstalling.
-if (require('electron-squirrel-startup')) {
-  app.quit();
-}
-
 // Copyright (c) Electron contributors
 // Copyright (c) 2013-2020 GitHub Inc.
 
@@ -36,6 +28,14 @@ if (require('electron-squirrel-startup')) {
  * written by:  Zakk Wilson-Christain
  *              19/05/23
  */
+
+const { app, BrowserWindow } = require('electron');
+const path = require('path');
+
+// Handle creating/removing shortcuts on Windows when installing/uninstalling.
+if (require('electron-squirrel-startup')) {
+  app.quit();
+}
 
 const createWindow = () => {
   // Create the browser window.

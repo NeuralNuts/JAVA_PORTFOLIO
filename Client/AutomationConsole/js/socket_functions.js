@@ -81,6 +81,12 @@ window.addEventListener('load', () => {
 })
 
 socket.on('table', (data) => {
+    var barCodeInput = document.getElementById("bar-code-input")
+    var sectionInput = document.getElementById("section-input")
+
+    barCodeInput.value = data[0];
+    sectionInput.value = data[1];
+
     bubbleSort();
     console.log(data)
 });
